@@ -1,0 +1,121 @@
+*{
+   margin: 0;
+   padding: 0;
+}
+body {
+	background-color: #EEEEEE;
+}
+ul{
+	list-style: none;
+	text-align: center;
+}
+ul li{
+	display: inline-block;
+	
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+input {
+	ime-mode:disabled;
+}
+.wrap {
+	width: 1200px;
+	/*height: 600px;*/
+	margin: 100px auto;
+	background-color: white;
+}
+.wrap .title ul{
+	background-color: ghostwhite;
+}
+.wrap .title ul li{
+	/*float: left;*/
+	
+	height: 30px;
+	line-height: 30px;
+	margin: 20px ;
+	font-size: 12px;
+}
+
+.wrap .title ul li:nth-child(2){
+	width: 500px;
+
+}
+.wrap .goods{
+	width: 1100px;
+	height: 120px;
+	margin: 10px auto;
+	border-bottom: 1px solid rosybrown;
+}
+.wrap .goods ul li {
+	height: 30px;
+	line-height: 30px;
+	margin: 20px ;
+	float: left;
+}
+.wrap .goods ul li:nth-child(1){
+	width: 560px;
+	
+}
+.wrap .goods ul li:nth-child(2){
+	width: 100px;
+	
+}
+.wrap .goods ul li:nth-child(3){
+	width: 40px;
+	
+}
+.wrap .goods ul li:nth-child(4){
+	width: 80px;
+	
+}
+.wrap .goods ul li:nth-child(4) span{
+	border: 1px solid black;
+	
+}
+.wrap .goods ul li:nth-child(4) input{
+	width: 20px;
+	height: 20px;
+	
+}
+.wrap .goods ul li:nth-child(5){
+	width: 30px;
+	color: red;
+	
+}
+.wrap .goods ul li:nth-child(6){
+	width: 40px;
+	/*margin-left: 50px;*/
+	/*float: right;*/
+	
+}
+.wrap .goods ul li img{
+	width: 70px;
+	height: 80px;
+	float: left;
+}
+
+
+.wrap .foot {
+	width: 1200px;
+	border-top: 1px solid darkgray;
+	margin: 0 auto;
+}
+.wrap .foot li {
+	height: 60px;
+	display: inline-block;
+	line-height: 60px;
+}
+.wrap .foot li:nth-child(1){
+	width: 500px;
+	
+	float: left;
+	text-align: left;
+}
+.wrap .foot li:nth-child(3){
+	background-color: red;
+	float: right;
+	width: 100px;
+	height: 60px;
+}

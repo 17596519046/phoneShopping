@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/rich/pojo/BuyCar.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/rich/pojo/EvaluateInner.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/rich/pojo/EvaluateInnerVO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/rich/pojo/Goods.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/rich/pojo/SystemUser.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/css/base-aa24246264.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/css/content.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/css/goodscart.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/css/header.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/css/login.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/css/product(1).css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/css/register(1).css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/css/sidebar.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/css/welcome-fc9359d842.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/img/image/1.ico" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/img/image/fav.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/img/image/guang.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/img/image/logo.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/img/image/yu.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/jquery-2.0.3.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/layer.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/layui.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/pages/before/footer.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/pages/before/header.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/pages/before/index.jsp" charset="GBK" />
+  </component>
+</project>

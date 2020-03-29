@@ -1,0 +1,60 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: #f2f0f0;
+    color: #666;
+    font-size: 12px;
+    font-family: Arial,'Microsoft YaHei';
+}
+.guimeilogo {
+	background-image: url(../img/logo.jpg);
+	width: 400px;
+	height: 100px;
+	
+}
+.wrap {
+	width: 1000px;
+	height: 600px;
+	background-color: white;
+	margin: 50px auto;
+}
+.login {
+	width: 400px;
+	height: 500px;
+	position: relative;
+	left: 500px;
+	top: -50px;
+	box-shadow: 0 0 20px 3px darkgray;
+	
+}
+.login .top {
+	border-bottom: 1px solid darkgray;
+}
+.login .top h1 {
+	display: inline-block;
+	margin: 10px 50px;
+}
+.login .top a{
+	color: lightpink;
+	font-size: 16px;
+	float: right;
+   margin: 15px 50px;
+}
+
+.login .mid input{
+	display: block;
+	width: 250px;
+	height: 30px;
+	margin: 20px auto;
+	padding: 0 5px ;
+	box-sizing: border-box;
+}
+
+.login .mid #submit {
+	background-color: #f36;
+	height: 40px;
+	color: white;
+	border: 0 ;
+}

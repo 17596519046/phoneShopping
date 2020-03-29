@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+">
+    <!--注入配置bean-->
+    <context:annotation-config />
+
+    <!--扫描工程文件包-->
+    <context:component-scan base-package="com.rich.*" >
+        <!--排除service扫描,防止与主容器中扫描重复，导致事物失效问题-->
+        <context:exclude-filter type="annotation"  expression="org.springframework.stereotype.Service" />
+    </context:component-scan>
+
+    <!-- 去除返回字符串时的引号 -->
+    <bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter">
+        <constructor-arg value="UTF-8" />
+        <!-- 避免出现乱码 -->
+        <property name="supportedMediaTypes">
+            <list>
+                <value>text/html; charset=UTF-8</value>
+                <value>text/plain; charset=UTF-8</value>
+                <value>application/json; charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8"     />
+        <property name="maxUploadSize" value="204800000"     />
+        <property name="maxInMemorySize" value="102400"     />
+    </bean>
+
+    <!-- 设置JSON转换 -->
+    <bean id="mappingJacksonHttpMessageConverter"
+          class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>text/html; charset=UTF-8</value>
+                <value>text/plain; charset=UTF-8</value>
+                <value>application/json; charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+    </bean>
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean ="stringHttpMessageConverter" />
+                <ref bean ="mappingJacksonHttpMessageConverter" />
+            </list>
+        </property>
+    </bean>
+    <!--配置springmvc响应视图-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/" />
+        <property name="suffix" value=".jsp" />
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+    </bean>
+</beans>

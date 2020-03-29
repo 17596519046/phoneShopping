@@ -1,0 +1,90 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: #f2f0f0;
+    color: #666;
+    font-size: 12px;
+    font-family: Arial,'Microsoft YaHei';
+}
+.guimeilogo {
+	background-image: url(../img/logo.jpg);
+	width: 400px;
+	height: 100px;
+	
+}
+.wrap {
+	width: 1000px;
+	height: 600px;
+	background-color: white;
+	margin: 50px auto;
+}
+.register {
+	width: 400px;
+	height: 500px;
+	position: relative;
+	left: 500px;
+	top: -50px;
+	box-shadow: 0 0 20px 3px darkgray;
+	
+}
+.register .top {
+	border-bottom: 1px solid darkgray;
+}
+.register .top h1 {
+	display: inline-block;
+	margin: 10px 50px;
+}
+.register .top a{
+	color: lightpink;
+	font-size: 16px;
+	float: right;
+   margin: 15px 50px;
+}
+
+.register .mid input{
+	display: block;
+	width: 250px;
+	height: 30px;
+	margin: 20px auto;
+	padding: 0 5px ;
+	box-sizing: border-box;
+}
+
+.register .mid #submit {
+	background-color: #f36;
+	height: 40px;
+	color: white;
+	border: 0 ;
+}
+
+.register .sec {
+	width: 250px;
+	height: 30px;
+	background-color: red;
+	margin: 20px auto;
+}
+.register .mid input#code{
+	margin: 0;
+	width: 150px;
+	float: left;
+}
+.register .mid .send{
+	text-decoration: none;
+	float: left;
+	width: 100px;
+	height: 30px;
+	background-color: #E40045;
+	text-align: center;
+	line-height: 30px;
+	color: white;
+	font-weight: 600;
+}
+.error {
+	color:red;
+	font-size:20px;
+	width:200px;
+	
+	margin: 0 auto;
+}
