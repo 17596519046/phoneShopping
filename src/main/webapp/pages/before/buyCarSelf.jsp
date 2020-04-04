@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="utf8" version="1">
-    <title>豫予-正品低价、品质保障、配送及时、轻松购物！</title>
+    <title>脑桥-正品低价、品质保障、配送及时、轻松购物！</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <meta name="description"
           content="京东JD.COM-专业的综合网上购物商城,销售家电、数码通讯、电脑、家居百货、服装服饰、母婴、图书、食品等数万个品牌优质商品.便捷、诚信的服务，为您提供愉悦的网上购物体验!">
@@ -108,89 +108,84 @@
 </div>
 <div id="shortcut">
     <div class="w">
-        <ul class="fl" clstag="h|keycount|head|topbar_01">
-            <li class="shortcut_btn dropdown" id="ttbar-mycity"><a href="javascript:void(0);" id="areamini"
-                                                                   class="dt cw-icon ui-areamini-text-wrap" style=""
-                                                                   aria-haspopup="true" aria-label="地区" role="button">
-                <%--<i--%>
-                    <%--class="iconfont iconfont-location"></i>--%>
-                <span class="ui-areamini-text" data-id="7"
-                                                                  title="河南">${area}</span></a>
-                <div class="dd dropdown-layer" tabindex="-1" area-labelledby="areamini" role="menu">
-                    <div class="dd-spacer"></div>
-                    <div class="ui-areamini-content-wrap" style="left: auto;">
-                        <div class="ui-areamini-content">
-                            <div class="ui-areamini-content-list">
-                                <c:forEach var="vo" items="${areaList}" varStatus="i">
-                                    <div class="item"><a data-id="1" href="javascript:void(0)" role="menuitem"
-                                                         onclick="clickArea('${vo.area}')"    class="${vo.area eq area ?'selected':''}"    tabindex="-1">${vo.area}</a></div>
-                                </c:forEach>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <ul class="fr">
-            <li class="fore1 dropdown" id="ttbar-login" clstag="h|keycount|head|topbar_02">
-                <c:choose>
-                    <c:when test="${user.userName eq null}">
-                        <a href="/pages/before/login.jsp" class="link-login">你好，请登录</a>
-                        &nbsp;&nbsp;<a
-                        href="/pages/before/register.jsp" class="link-regist style-red">免费注册</a>
-                    </c:when>
-                    <c:otherwise>
-                        <a href="#" class="link-login">${user.userName}</a>
-                        &nbsp;&nbsp; <a href="#" onclick="myselfOrder()" class="link-login">我的订单</a>
-                        &nbsp;&nbsp; <a href="/pages/before/myselfAddress.jsp" class="link-login">收货地址</a>
-                    </c:otherwise>
-                </c:choose>
-                <c:choose>
-                    <c:when test="${user.userName eq null}">
-                    </c:when>
-                    <c:otherwise>
-                        &nbsp;&nbsp; <a href="" onclick="loginOut()"  class="link-login">注销</a>
-                    </c:otherwise>
-                </c:choose>
-            </li>
-        </ul>
+        <%--<ul class="fl" clstag="h|keycount|head|topbar_01">--%>
+            <%--<li class="shortcut_btn dropdown" id="ttbar-mycity"><a href="javascript:void(0);" id="areamini"--%>
+                                                                   <%--class="dt cw-icon ui-areamini-text-wrap" style=""--%>
+                                                                   <%--aria-haspopup="true" aria-label="地区" role="button">--%>
+                <%--&lt;%&ndash;<i&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;class="iconfont iconfont-location"></i>&ndash;%&gt;--%>
+                <%--<span class="ui-areamini-text" data-id="7"--%>
+                                                                  <%--title="河南">${area}</span></a>--%>
+                <%--<div class="dd dropdown-layer" tabindex="-1" area-labelledby="areamini" role="menu">--%>
+                    <%--<div class="dd-spacer"></div>--%>
+                    <%--<div class="ui-areamini-content-wrap" style="left: auto;">--%>
+                        <%--<div class="ui-areamini-content">--%>
+                            <%--<div class="ui-areamini-content-list">--%>
+                                <%--<c:forEach var="vo" items="${areaList}" varStatus="i">--%>
+                                    <%--<div class="item"><a data-id="1" href="javascript:void(0)" role="menuitem"--%>
+                                                         <%--onclick="clickArea('${vo.area}')"    class="${vo.area eq area ?'selected':''}"    tabindex="-1">${vo.area}</a></div>--%>
+                                <%--</c:forEach>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</li>--%>
+        <%--</ul>--%>
+            <ul class="fr">
+                <li class="fore1 dropdown" id="ttbar-login" clstag="h|keycount|head|topbar_02">
+                    <c:choose>
+                        <c:when test="${user.loginName eq null}">
+                            <a href="/pages/before/login.jsp" class="link-login">你好，请登录</a>
+                            &nbsp;&nbsp;<a
+                            href="/pages/before/register.jsp" class="link-regist style-red">免费注册</a>
+                        </c:when>
+                        <c:otherwise>
+                            &nbsp;&nbsp; <a href="/before/main" class="link-login">首页</a>
+                            <a href="/pages/before/mySelfInfo.jsp" class="link-login">${user.loginName}</a>
+                            &nbsp;&nbsp; <a href="/before/selectMySelfOrderInfo?userId=${user.id}"  class="link-login">我的订单</a>
+                            &nbsp;&nbsp; <a href="/pages/before/myselfAddress.jsp" class="link-login">收货地址</a>
+                            &nbsp;&nbsp; <a href="/before/loginOut"  class="link-login">注销</a>
+                        </c:otherwise>
+                    </c:choose>
+                </li>
+            </ul>
     </div>
 </div>
-<div id="header">
-    <div class="w">
-        <div id="logo" class="logo">
-            <h1 class="logo_tit">
-                <a href="#"
-                   style="background-image: url('/img/image/yu.jpg');background-size: cover;background-position: 0px -35px"
-                   class="logo_tit_lk" clstag="h|keycount|head|logo_01">京东</a>
-                <%--<a href="#" class="logo_tit_lk" clstag="h|keycount|head|logo_01">京东</a>--%>
-            </h1>
-            <h2 class="logo_subtit">京东,多快好省</h2>
-            <div class="logo_extend" clstag="h|keycount|head|logo_02"></div>
-        </div>
+<%--<div id="header">--%>
+    <%--<div class="w">--%>
+        <%--<div id="logo" class="logo">--%>
+            <%--<h1 class="logo_tit">--%>
+                <%--<a href="#"--%>
+                   <%--style="background-image: url('/img/image/yu.jpg');background-size: cover;background-position: 0px -35px"--%>
+                   <%--class="logo_tit_lk" clstag="h|keycount|head|logo_01">京东</a>--%>
+                <%--&lt;%&ndash;<a href="#" class="logo_tit_lk" clstag="h|keycount|head|logo_01">京东</a>&ndash;%&gt;--%>
+            <%--</h1>--%>
+            <%--<h2 class="logo_subtit">京东,多快好省</h2>--%>
+            <%--<div class="logo_extend" clstag="h|keycount|head|logo_02"></div>--%>
+        <%--</div>--%>
 
-        <div id="search">
-            <div class="search-m">
+        <%--<div id="search">--%>
+            <%--<div class="search-m">--%>
 
-                <div class="form" role="serachbox">
-                    <%--<ul id="shelper" class="search-helper" style="display: none"></ul>--%>
-                    <input clstag="h|keycount|head|search_c" type="text"
-                           onkeydown="javascript:if(event.keyCode==13) search('key');" autocomplete="off" id="key"
-                           accesskey="s" value="${name}"
-                           style="width: 100%;height: 100%;background-color: white"
-                           class="text"
-                           aria-label="搜索"/>
-                    <button clstag="h|keycount|head|search_a" onclick="search('key');return false;" class="button"
-                            aria-label="搜索">
-                        <i
-                                class="iconfont">&#xe60b;</i></button>
-                </div>
-            </div>
-        </div>
+                <%--<div class="form" role="serachbox">--%>
+                    <%--&lt;%&ndash;<ul id="shelper" class="search-helper" style="display: none"></ul>&ndash;%&gt;--%>
+                    <%--<input clstag="h|keycount|head|search_c" type="text"--%>
+                           <%--onkeydown="javascript:if(event.keyCode==13) search('key');" autocomplete="off" id="key"--%>
+                           <%--accesskey="s" value="${name}"--%>
+                           <%--style="width: 100%;height: 100%;background-color: white"--%>
+                           <%--class="text"--%>
+                           <%--aria-label="搜索"/>--%>
+                    <%--<button clstag="h|keycount|head|search_a" onclick="search('key');return false;" class="button"--%>
+                            <%--aria-label="搜索">--%>
+                        <%--<i--%>
+                                <%--class="iconfont">&#xe60b;</i></button>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+        <%--</div>--%>
 
-        <div id="hotwords" clstag="h|keycount|head|search_d" role=""></div>
-    </div>
-</div>
+        <%--<div id="hotwords" clstag="h|keycount|head|search_d" role=""></div>--%>
+    <%--</div>--%>
+<%--</div>--%>
 <div class="cart-filter-bar">
     <ul class="switch-cart">
         <li class="switch-cart-item curr">
@@ -245,71 +240,7 @@
             <div class="column t-action">操作</div>
         </div>
         <div id="cart-list"><input type="hidden" id="allSkuIds" value="57730305717">
-            <input type="hidden" id="outSkus" value="">
-            <input type="hidden" id="isLogin" value="1">
-            <input type="hidden" id="isNoSearchStockState" value="0">
-            <input type="hidden" id="isNoDD" value="0">
-            <input type="hidden" id="isNoCoupon" value="0">
-            <input type="hidden" id="isFavoriteDowngrade" value="0">
-            <input type="hidden" id="isUnmarketDowngrade" value="0">
-            <input type="hidden" id="isPriceNoticeDowngrade" value="0">
-            <input type="hidden" id="isInstallmentDowngrade" value="0">
-            <input type="hidden" id="headNoticeDg" value="0">
-            <input type="hidden" id="isNoVenderFreight" value="0">
-            <input type="hidden" id="isNoZyDelivery" value="0">
-            <input type="hidden" id="isNoPopDelivery" value="0">
-            <input type="hidden" id="isNoXzyf" value="0">
-            <input type="hidden" id="isNoXzyfCd" value="0">
-            <input type="hidden" id="isGiftServiceDowngrade" value="0">
-            <input type="hidden" id="newUser" value="0">
-            <input type="hidden" id="hiddenLocationId">
-            <input type="hidden" id="hiddenLocation">
-            <input type="hidden" id="ids" value="">
-            <input type="hidden" id="isNgsdg" value="0">
-            <input type="hidden" id="isCssdg" value="0">
-            <input type="hidden" id="isCsudg" value="0">
-            <input type="hidden" id="isRgdg" value="">
-            <input type="hidden" id="isOpdg" value="0">
-            <input type="hidden" id="isYydg" value="0">
-            <input type="hidden" id="overseasLoc" value="0">
-            <input type="hidden" id="isOadg" value="">
-            <input type="hidden" id="isMdxxdg" value="0">
-            <input type="hidden" id="isWmdg" value="0">
-            <input type="hidden" id="isLdg" value="0">
-            <input type="hidden" id="isPsydg" value="0">
-            <input type="hidden" id="isSgdg" value="0">
-            <input type="hidden" id="isqqgdg" value="">
-            <input type="hidden" id="iscardg" value="">
-            <input type="hidden" id="istoOrder" value="">
-            <!-- 修改数量之前的值 -->
-            <input type="hidden" id="changeBeforeValue" value="">
-            <input type="hidden" id="changeBeforeId" value="">
-            <input type="hidden" id="coord" value="121.62832,31.251">
-            <input type="hidden" value="4" id="checkedCartState">
-            <input type="hidden" value="0" id="overseaSelectedCount">
-            <input type="hidden" value="0" id="noOverseaSelectedCount">
-            <input type="hidden" value="692560" id="venderIds">
-            <input type="hidden" value="" id="fictPopSkuIds">
-            <input type="hidden" value="692560" id="fictVenderIds">
-            <input type="hidden" value="" id="zySkuCid">
-            <input type="hidden" value="57730305717_12113_1_1_false_692560_0" id="couponParam">
-            <input type="hidden" value="" id="businessLinkSkuIds">
-            <input type="hidden" value="692560" id="venderFreightIds">
-            <input type="hidden" value="0" id="venderTotals">
-            <input type="hidden" value="2" id="uclass">
-            <input type="hidden" value="0.00" id="freshTotalPrice" autocomplete="off">
-            <input type="hidden" value="0.00" id="notFreshTotalPrice" autocomplete="off">
-            <input type="hidden" value="0.00" id="walmartTotalPrice" autocomplete="off">
-            <input type="hidden" value="1583830623404" id="currentTime">
-            <input type="hidden" value="false" id="isShowDepreNotice">
-            <input type="hidden" value="0" id="isJcLo">
-            <input type="hidden" value="-1" id="rlk">
-            <input type="hidden" value="1" id="isSsdgHttp">
-            <input type="hidden" value="30" id="limitOpdgThreshold">
-            <!-- cartAsyc -->
-            <input type="hidden" value="0" id="isOpAsyc">
-            <input type="hidden" value="0" id="isJcAsyc">
-            <input type="hidden" value="0" id="isVenderAsyc">
+
             <!-- 需要引用的全局信息 -->
             <div class="cart-item-list" id="cart-item-list-01">
                 <div class="cart-tbody" id="vender_692560">
@@ -350,14 +281,14 @@
                                                class="J_zyyhq_57730305717" pnc="false" pncs="">
                                                 <img alt="" width="80"
                                                      clstag="clickcart|keycount|xincart|cart_sku_pic"
-                                                     src="${po.img}">
+                                                     src="${po.productImg}">
                                             </a>
                                         </div>
                                         <div class="item-msg">
                                             <div class="p-name">
                                                 <a clstag="clickcart|keycount|xincart|cart_sku_name"
                                                    href="#">
-                                                    ${po.goodsName}
+                                                    ${po.productName}
                                                 </a>
                                             </div>
                                             <div class="p-extend p-extend-new">
@@ -374,7 +305,7 @@
                                 <div class="cell p-price p-price-new
 																								">
                                     <p class="plus-switch">
-                                        <strong id="${po.id}money">${po.price}</strong>
+                                        <strong id="${po.id}money">${po.productPrice}</strong>
                                     </p>
                                     <div>
                                         <div class="clr"></div>
@@ -388,7 +319,7 @@
                                     <div class="quantity-form">
                                         <a onclick="subtract('${po.id}')"
                                            class="decrement disabled">-</a>
-                                        <input autocomplete="off" type="text" class="itxt" value="${po.num}"
+                                        <input autocomplete="off" type="text" class="itxt" value="${po.buyNum}"
                                                id="${po.id}number" minnum="1">
                                         <a  onclick="add('${po.id}')"
                                            class="increment">+</a>
@@ -427,7 +358,7 @@
                                     <%--<div class="ac ftx-03 quantity-txt" _stock="stock_57730305717">有货</div>--%>
                                 </div>
                                 <div class="cell p-sum">
-                                    <strong id="${po.id}prices"><fmt:formatNumber type="number" value="${po.num*po.price}" pattern="0.00" maxFractionDigits="2"></fmt:formatNumber></strong>
+                                    <strong id="${po.id}prices"><fmt:formatNumber type="number" value="${po.buyNum*po.productPrice}" pattern="0.00" maxFractionDigits="2"></fmt:formatNumber></strong>
                                 </div>
                                 <div class="cell p-ops">
                                     <!--单品-->
@@ -556,7 +487,12 @@
             return false
         }
         var price = $("#account").html();
-        window.location.href = "/before/settle?price="+price+"&addressInfoId="+id;
+        if(parseInt(price) > 0){
+            window.location.href = "/before/settle?price="+price+"&addressInfoId="+id;
+        }else{
+            alert('请将商品加入购物车');
+            return false
+        }
     }
 </script>
 <script src="//gias.jd.com/js/td.js"></script>

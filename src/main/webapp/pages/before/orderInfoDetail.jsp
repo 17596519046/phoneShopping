@@ -87,29 +87,29 @@
 <div id="shortcut">
     <div class="w">
         <%--<ul class="fl" clstag="h|keycount|head|topbar_01">--%>
-            <%--<li class="shortcut_btn dropdown" id="ttbar-mycity"><a href="javascript:void(0);" id="areamini"--%>
-                                                                   <%--class="dt cw-icon ui-areamini-text-wrap" style=""--%>
-                                                                   <%--aria-haspopup="true" aria-label="地区" role="button">--%>
-                <%--&lt;%&ndash;<i&ndash;%&gt;--%>
-                <%--&lt;%&ndash;class="iconfont iconfont-location"></i>&ndash;%&gt;--%>
-                <%--<span class="ui-areamini-text" data-id="7"--%>
-                      <%--title="河南">${area}</span></a>--%>
-                <%--<div class="dd dropdown-layer" tabindex="-1" area-labelledby="areamini" role="menu">--%>
-                    <%--<div class="dd-spacer"></div>--%>
-                    <%--<div class="ui-areamini-content-wrap" style="left: auto;">--%>
-                        <%--<div class="ui-areamini-content">--%>
-                            <%--<div class="ui-areamini-content-list">--%>
-                                <%--<c:forEach var="vo" items="${areaList}" varStatus="i">--%>
-                                    <%--<div class="item"><a data-id="1" href="javascript:void(0)" role="menuitem"--%>
-                                                         <%--onclick="clickArea('${vo.area}')"--%>
-                                                         <%--class="${vo.area eq area ?'selected':''}"--%>
-                                                         <%--tabindex="-1">${vo.area}</a></div>--%>
-                                <%--</c:forEach>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                    <%--</div>--%>
-                <%--</div>--%>
-            <%--</li>--%>
+        <%--<li class="shortcut_btn dropdown" id="ttbar-mycity"><a href="javascript:void(0);" id="areamini"--%>
+        <%--class="dt cw-icon ui-areamini-text-wrap" style=""--%>
+        <%--aria-haspopup="true" aria-label="地区" role="button">--%>
+        <%--&lt;%&ndash;<i&ndash;%&gt;--%>
+        <%--&lt;%&ndash;class="iconfont iconfont-location"></i>&ndash;%&gt;--%>
+        <%--<span class="ui-areamini-text" data-id="7"--%>
+        <%--title="河南">${area}</span></a>--%>
+        <%--<div class="dd dropdown-layer" tabindex="-1" area-labelledby="areamini" role="menu">--%>
+        <%--<div class="dd-spacer"></div>--%>
+        <%--<div class="ui-areamini-content-wrap" style="left: auto;">--%>
+        <%--<div class="ui-areamini-content">--%>
+        <%--<div class="ui-areamini-content-list">--%>
+        <%--<c:forEach var="vo" items="${areaList}" varStatus="i">--%>
+        <%--<div class="item"><a data-id="1" href="javascript:void(0)" role="menuitem"--%>
+        <%--onclick="clickArea('${vo.area}')"--%>
+        <%--class="${vo.area eq area ?'selected':''}"--%>
+        <%--tabindex="-1">${vo.area}</a></div>--%>
+        <%--</c:forEach>--%>
+        <%--</div>--%>
+        <%--</div>--%>
+        <%--</div>--%>
+        <%--</div>--%>
+        <%--</li>--%>
         <%--</ul>--%>
         <ul class="fr">
             <li class="fore1 dropdown" id="ttbar-login" clstag="h|keycount|head|topbar_02">
@@ -123,6 +123,7 @@
                         &nbsp;&nbsp; <a href="/before/main" class="link-login">首页</a>
                         <a href="/pages/before/mySelfInfo.jsp" class="link-login">${user.loginName}</a>
                         &nbsp;&nbsp; <a href="/before/selectMySelfBuyCarInfo?userId=${user.id}"  class="link-login">我的购物车</a>
+                        &nbsp;&nbsp; <a href="/before/selectMySelfOrderInfo?userId=${user.id}"  class="link-login">我的订单</a>
                         &nbsp;&nbsp; <a href="/pages/before/myselfAddress.jsp" class="link-login">收货地址</a>
                         &nbsp;&nbsp; <a href="/before/loginOut"  class="link-login">注销</a>
                     </c:otherwise>
@@ -132,82 +133,80 @@
     </div>
 </div>
 <%--<div id="header">--%>
-    <%--<div class="w">--%>
-        <%--<div id="logo" class="logo">--%>
-            <%--<h1 class="logo_tit">--%>
-                <%--<a href="#"--%>
-                   <%--style="background-image: url('/img/image/yu.jpg');background-size: cover;background-position: 0px -35px"--%>
-                   <%--class="logo_tit_lk" clstag="h|keycount|head|logo_01">京东</a>--%>
-                <%--&lt;%&ndash;<a href="#" class="logo_tit_lk" clstag="h|keycount|head|logo_01">京东</a>&ndash;%&gt;--%>
-            <%--</h1>--%>
-            <%--<h2 class="logo_subtit">京东,多快好省</h2>--%>
-            <%--<div class="logo_extend" clstag="h|keycount|head|logo_02"></div>--%>
-        <%--</div>--%>
-
-        <%--<div id="search">--%>
-            <%--<div class="search-m">--%>
-
-                <%--<div class="form" role="serachbox">--%>
-                    <%--&lt;%&ndash;<ul id="shelper" class="search-helper" style="display: none"></ul>&ndash;%&gt;--%>
-                    <%--<input clstag="h|keycount|head|search_c" type="text"--%>
-                           <%--onkeydown="javascript:if(event.keyCode==13) search('key');" autocomplete="off" id="key"--%>
-                           <%--accesskey="s" value="${name}"--%>
-                           <%--style="width: 100%;height: 100%;background-color: white"--%>
-                           <%--class="text"--%>
-                           <%--aria-label="搜索"/>--%>
-                    <%--<button clstag="h|keycount|head|search_a" onclick="search('key');return false;" class="button"--%>
-                            <%--aria-label="搜索">--%>
-                        <%--<i--%>
-                                <%--class="iconfont">&#xe60b;</i></button>--%>
-                <%--</div>--%>
-
-                <%--<div id="settleup" class="dropdown" clstag="h|keycount|head|cart_null">--%>
-                    <%--<div class="cw-icon">--%>
-                        <%--<i class="iconfont">&#xe60c;</i>--%>
-                        <%--<a href="#" onclick="mySelf()">我的购物车</a>--%>
-                        <%--&lt;%&ndash;<a target="_blank" href="#">我的购物车</a>&ndash;%&gt;--%>
-                        <%--<i class="ci-count" id="shopping-amount"></i>--%>
-                    <%--</div>--%>
-                    <%--<div class="dropdown-layer">--%>
-                        <%--<div id="J_cart_pop">--%>
-                            <%--<div class="cart_empty">--%>
-                                <%--<i class="cart_empty_img"></i>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                    <%--</div>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-
-        <%--<div id="hotwords" clstag="h|keycount|head|search_d" role=""></div>--%>
-    <%--</div>--%>
+<%--<div class="w">--%>
+<%--<div id="logo" class="logo">--%>
+<%--<h1 class="logo_tit">--%>
+<%--<a href="#"--%>
+<%--style="background-image: url('/img/image/yu.jpg');background-size: cover;background-position: 0px -35px"--%>
+<%--class="logo_tit_lk" clstag="h|keycount|head|logo_01">京东</a>--%>
+<%--&lt;%&ndash;<a href="#" class="logo_tit_lk" clstag="h|keycount|head|logo_01">京东</a>&ndash;%&gt;--%>
+<%--</h1>--%>
+<%--<h2 class="logo_subtit">京东,多快好省</h2>--%>
+<%--<div class="logo_extend" clstag="h|keycount|head|logo_02"></div>--%>
 <%--</div>--%>
-<%--<div class="cart-filter-bar">--%>
-    <%--<ul class="switch-cart">--%>
-        <%--<li class="switch-cart-item curr">--%>
-            <%--<a href="#">--%>
-                <%--<em>我的订单</em>--%>
-                <%--&lt;%&ndash;<span class="number">1</span>&ndash;%&gt;--%>
-            <%--</a>--%>
-        <%--</li>--%>
-    <%--</ul>--%>
-    <%--<div class="clr"></div>--%>
-    <%--<div class="w-line">--%>
-        <%--<div class="floater" style="width: 79px; left: 0px;"></div>--%>
-    <%--</div>--%>
-    <%--<div class="tab-con ui-switchable-panel-selected" style="display: block;"></div>--%>
-    <%--<div class="tab-con hide" style="display: none;"></div>--%>
+
+<%--<div id="search">--%>
+<%--<div class="search-m">--%>
+
+<%--<div class="form" role="serachbox">--%>
+<%--&lt;%&ndash;<ul id="shelper" class="search-helper" style="display: none"></ul>&ndash;%&gt;--%>
+<%--<input clstag="h|keycount|head|search_c" type="text"--%>
+<%--onkeydown="javascript:if(event.keyCode==13) search('key');" autocomplete="off" id="key"--%>
+<%--accesskey="s" value="${name}"--%>
+<%--style="width: 100%;height: 100%;background-color: white"--%>
+<%--class="text"--%>
+<%--aria-label="搜索"/>--%>
+<%--<button clstag="h|keycount|head|search_a" onclick="search('key');return false;" class="button"--%>
+<%--aria-label="搜索">--%>
+<%--<i--%>
+<%--class="iconfont">&#xe60b;</i></button>--%>
 <%--</div>--%>
+
+<%--<div id="settleup" class="dropdown" clstag="h|keycount|head|cart_null">--%>
+<%--<div class="cw-icon">--%>
+<%--<i class="iconfont">&#xe60c;</i>--%>
+<%--<a href="#" onclick="mySelf()">我的购物车</a>--%>
+<%--&lt;%&ndash;<a target="_blank" href="#">我的购物车</a>&ndash;%&gt;--%>
+<%--<i class="ci-count" id="shopping-amount"></i>--%>
+<%--</div>--%>
+<%--<div class="dropdown-layer">--%>
+<%--<div id="J_cart_pop">--%>
+<%--<div class="cart_empty">--%>
+<%--<i class="cart_empty_img"></i>--%>
+<%--</div>--%>
+<%--</div>--%>
+<%--</div>--%>
+<%--</div>--%>
+<%--</div>--%>
+<%--</div>--%>
+
+<div id="hotwords" clstag="h|keycount|head|search_d" role=""></div>
+</div>
+</div>
+<div class="cart-filter-bar">
+<ul class="switch-cart">
+<li class="switch-cart-item curr">
+<a href="#">
+<em>订单详情</em>
+<%--<span class="number">1</span>--%>
+</a>
+</li>
+</ul>
+<div class="clr"></div>
+<div class="w-line">
+<div class="floater" style="width: 79px; left: 0px;"></div>
+</div>
+<div class="tab-con ui-switchable-panel-selected" style="display: block;"></div>
+<div class="tab-con hide" style="display: none;"></div>
+</div>
 <div id="jd-cart">
     <div class="cart-main cart-main-new">
         <div class="cart-thead">
-            <div class="column t-goods"></div>
-            <div class="column t-props" style="margin-left: 5%">订单编号</div>
-            <div class="column t-price">金额</div>
-            <div class="column t-quantity" style="margin-left: 5%">订单状态</div>
-            <div class="column t-sum"></div>
-            <div class="column t-action" style="margin-left: 8%;width: 400px">收货地址</div>
-            <div class="column t-action">操作</div>
+            <div class="column t-goods" style="text-align: center">商品</div>
+            <div class="column t-props"></div>
+            <div class="column t-price">单价</div>
+            <div class="column t-quantity" style="width: 30%;text-align: center" >数量</div>
+            <div class="column t-sum">小计</div>
         </div>
         <div id="cart-list"><input type="hidden" id="allSkuIds" value="57730305717">
             <!-- 需要引用的全局信息 -->
@@ -222,17 +221,18 @@
                                  cancelplus="false"
                                  dt="5" shopid="688677">
                                 <div class="item-form">
-                                    <div class="cell p-goods" style="width: 22%">
+                                    <div class="cell p-goods">
                                         <div class="goods-item">
-                                            <a href="/before/selectMyselfOrderInfoDetail?orderId=${po.orderId}" style="cursor: pointer;color:#ed3800">${po.orderCode}</a>
-                                            <%--<div class="p-img">--%>
-                                                <%----%>
-                                            <%--</div>--%>
+                                            <div class="p-img">
+                                                <img alt="" width="80" style="height:80px;"
+                                                     clstag="clickcart|keycount|xincart|cart_sku_pic"
+                                                     src="${po.productImg}">
+                                            </div>
                                             <div class="item-msg">
                                                 <div class="p-name">
                                                     <a clstag="clickcart|keycount|xincart|cart_sku_name"
                                                        href="#">
-
+                                                            ${po.productName}
                                                     </a>
                                                 </div>
                                                 <div class="p-extend p-extend-new">
@@ -246,10 +246,9 @@
                                         <%--<div class="cell p-props p-props-new">--%>
                                         <%--<div class="props-txt" title="筋膜枪">筋膜枪</div>--%>
                                         <%--</div>--%>
-                                    <div class="cell p-price p-price-new" style="text-align: left;padding-right: 0px">
-                                            ${po.price}
-                                        <p class="plus-switch" >
-                                            <strong id="money"></strong>
+                                    <div class="cell p-price p-price-new" style="width: 12%">
+                                        <p class="plus-switch">
+                                            <strong id="${po.id}money">${po.productPrice}</strong>
                                         </p>
                                         <div>
                                             <div class="clr"></div>
@@ -258,69 +257,38 @@
                                         </p>
                                         <p class="mt5" bt=""></p>
                                     </div>
-                                    <div class="cell p-price p-price-new" style="text-align: left;width: 100px">
-                                                <c:choose>
-                                                    <c:when test="${po.orderStatus == 1}">
-                                                        已下单
-                                                    </c:when>
-                                                    <c:when test="${po.orderStatus == 2}">
-                                                        取消订单
-                                                    </c:when>
-                                                    <c:when test="${po.orderStatus == 3}">
-                                                        管理取消
-                                                    </c:when>
-                                                    <c:when test="${po.orderStatus == 4}">
-                                                        已发货
-                                                    </c:when>
-                                                    <c:when test="${po.orderStatus == 5}">
-                                                        已接收
-                                                    </c:when>
-                                                    <c:otherwise>
-                                                        派送中
-                                                    </c:otherwise>
-                                                </c:choose>
-                                    </div>
-                                    <div class="cell p-ops" style="width: 400px">
+                                    <div class="cell p-quantity" style="width: 30%">
                                         <!--单品-->
-                                        <a id="remove_692560_57730305717_1"
-                                           clstag="clickcart|keycount|xincart|cart_sku_del"
-                                           data-name="安步（ANBU）轻羽筋膜枪按摩枪 蜜蜂静音大..." data-more="removed_299.00_1"
-                                           class="cart-remove" ob="false">
-                                                ${po.province}
-                                                ${po.city}
-                                                ${po.area}
-                                                ${po.detailsAddress}
-
-                                        </a>
-                                            <%--<a href="javascript:void(0);" class="cart-follow" id="follow_692560_57730305717_1" clstag="clickcart|keycount|xincart|cart_sku_guanzhu" ob="false">移到我的关注</a>--%>
+                                        <div class="quantity-form" style="width: 60%">
+                                                <%--<a onclick="subtract('${po.id}')"--%>
+                                                <%--class="decrement disabled">-</a>--%>
+                                            <input style="position: absolute;margin-left: 73%" readonly="readonly" autocomplete="off" type="text" class="itxt"
+                                                   value="${po.buyNum}"
+                                                   id="${po.id}number" minnum="1">
+                                                <%--<a  onclick="add('${po.id}')"--%>
+                                                <%--class="increment">+</a>--%>
+                                        </div>
                                     </div>
-                                    <div class="cell p-ops" style="margin-left: 2%">
-                                        <!--单品-->
-
-                                        <a
-                                                onclick="cancelOrder('${po.orderId}','${po.orderStatus}')"
-                                                style="cursor:pointer" id="remove_692560_57730305717_1"
-                                                clstag="clickcart|keycount|xincart|cart_sku_del"
-                                                data-name="安步（ANBU）轻羽筋膜枪按摩枪 蜜蜂静音大..." data-more="removed_299.00_1"
-                                                class="cart-remove" ob="false">
-                                            <c:choose>
-                                                <c:when test="${po.orderStatus != 2}">
-                                                    取消订单
-                                                </c:when>
-                                                <c:otherwise>
-                                                </c:otherwise>
-                                            </c:choose>
-                                        </a>
-                                        <script>
-                                            function cancelOrder(id) {
-                                                $.post('/before/cancelOrder',{id:id},function (data) {
-                                                    var userId = $("#userId").val();
-                                                    window.location.href = 'selectMySelfOrderInfo?userId='+userId;
-                                                })
-                                            }
-                                        </script>
-                                            <%--<a href="javascript:void(0);" class="cart-follow" id="follow_692560_57730305717_1" clstag="clickcart|keycount|xincart|cart_sku_guanzhu" ob="false">移到我的关注</a>--%>
+                                    <div class="cell p-sum" style="padding-left: 2%;padding-right: 0px">
+                                        <strong id="${po.id}prices"><fmt:formatNumber type="number"
+                                                                                      value="${po.buyNum*po.productPrice}"
+                                                                                      pattern="0.00"
+                                                                                      maxFractionDigits="2"></fmt:formatNumber></strong>
                                     </div>
+                                    <%--<div class="cell p-ops" style="width: 400px">--%>
+                                        <%--<!--单品-->--%>
+                                        <%--<a id="remove_692560_57730305717_1"--%>
+                                           <%--clstag="clickcart|keycount|xincart|cart_sku_del"--%>
+                                           <%--data-name="安步（ANBU）轻羽筋膜枪按摩枪 蜜蜂静音大..." data-more="removed_299.00_1"--%>
+                                           <%--class="cart-remove" ob="false">--%>
+                                                <%--${po.province}--%>
+                                                <%--${po.city}--%>
+                                                <%--${po.area}--%>
+                                                <%--${po.detailsAddress}--%>
+
+                                        <%--</a>--%>
+                                            <%--&lt;%&ndash;<a href="javascript:void(0);" class="cart-follow" id="follow_692560_57730305717_1" clstag="clickcart|keycount|xincart|cart_sku_guanzhu" ob="false">移到我的关注</a>&ndash;%&gt;--%>
+                                    <%--</div>--%>
                                     <%--<div class="cell p-ops">--%>
                                         <%--<!--单品-->--%>
                                         <%--<a--%>
@@ -359,7 +327,7 @@
                                     <!-- 落地配服务 -->
                                 </div>
                                 <%--<div id="${po.id}evaluate" class="comment-column J-comment-column" style="margin-bottom: 1%;display: none">--%>
-                                    <%--<textarea id="${po.id}inner" style="width: 83%"></textarea>--%>
+                                    <%--<textarea id="${po.id}inner" placeholder="请输入评价内容" style="width: 83%"></textarea>--%>
                                     <%--<button onclick="commit('${po.id}','${po.goodsId}')" style="background-color: #019320;color: white;width: 60px;height: 30px;position: absolute;margin-left: 20px;margin-top:10px;border-radius: 5px">提交</button>--%>
                                 <%--</div>--%>
                                 <div class="item-line"></div>

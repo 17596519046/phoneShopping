@@ -51,6 +51,7 @@
     <script src="//g.alicdn.com/secdev/sufei_data/3.8.7/index.js" id="aplus-sufei"></script>
     <script src="//g.alicdn.com/secdev/nsv/1.0.72/ns_d_83_3_n.js"></script>
     <script async="" src="https://log.mmstat.com/eg.js"></script>
+    <script src="/js/supersized-init.js"></script>
 </head>
 <body>
 <script id="tb-beacon-aplus" src="//g.alicdn.com/alilog/mlog/aplus_v2.js"
@@ -196,9 +197,9 @@
     <div class="header" data-spm="a2226n0">
 
 
-        <a href="//www.tmall.com" title="天猫Tmall.com" target="_top">
-            <img class="tm-logo" src="//img.alicdn.com/tfs/TB1_Gn8RXXXXXXqaFXXXXXXXXXX-380-54.png">
-        </a>
+        <%--<a href="//www.tmall.com" title="天猫Tmall.com" target="_top">--%>
+            <%--<img class="tm-logo" src="//img.alicdn.com/tfs/TB1_Gn8RXXXXXXqaFXXXXXXXXXX-380-54.png">--%>
+        <%--</a>--%>
 
     </div>
     <div class="content">

@@ -17,11 +17,11 @@ public class BuyCar{
 	/**
 	*商品的数量
 	*/
-	private int	num;
+	private int	buyNum;
 	/**
 	*商品id
 	*/
-	private int	goodsId;
+	private int	productId;
 	/**
 	*用户id
 	*/

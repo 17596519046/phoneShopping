@@ -1,6 +1,7 @@
 package com.rich.mapper;
 import com.rich.pojo.*;
-import com.rich.vo.BuyCarInfo;
+import com.rich.vo.GoodsCarInfo;
+import com.rich.vo.OrderInfoVO;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -31,23 +32,27 @@ public interface LoginMapper {
 
     AddressInfo selectAddressMyself(AddressInfo addressInfo);
 
+    int cancelOrder(OrderInfo orderInfo);
+
     int updatePasswordInfo(SystemUser systemUser);
 
     List<Goods> selectAllProductInfo(Goods goods);
 
-    List<Goods> selectCityInfo();
-
     int updateMyself(SystemUser systemUser);
 
-    int insertBuyCar(BuyCar buyCar);
+    int insertGoodsCar(BuyCar buyCar);
 
-    List<BuyCarInfo> selectBuyCarInfo(BuyCar buyCar);
+    List<Goods> selectProductType();
 
-    List<BuyCarInfo> selectOrderInfo(BuyCar buyCar);
+    List<GoodsCarInfo> selectGoodsCarInfo(BuyCar buyCar);
 
-    int deleteBuyCar(int id);
+    List<GoodsCarInfo> selectOrderDetail(BuyCar buyCar);
+
+    List<OrderInfoVO> selectOrderInfo(BuyCar buyCar);
+
+    int deleteGoodsCar(int id);
 
     int insertOrderInfo(OrderInfo orderInfo);
 
-    int updateBatchList(@Param(value = "list") List<BuyCarInfo> buyCars);
+    int updateBatchList(@Param(value = "list") List<GoodsCarInfo> buyCars);
 }

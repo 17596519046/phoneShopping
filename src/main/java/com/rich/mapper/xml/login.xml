@@ -64,6 +64,12 @@
         select * from address_info where userId = #{userId} and isDefault = 1
     </select>
 
+    <update id="cancelOrder">
+        update order_info
+        set orderStatus = 2
+        where id = #{id}
+    </update>
+
     <update id="updatePasswordInfo">
         UPDATE system_user set password = #{password}
         where user_name = #{userName} and phone = #{phone}
@@ -75,56 +81,67 @@
             <if test="productName != null and productName != ''">
                 and p.product_name like CONCAT('%',#{productName},'%')
             </if>
-            <if test="productArea != null and productArea != ''">
-                and p.product_area = #{productArea}
+            <if test="typeId != null">
+                and p.type_id = #{typeId}
             </if>
         </where>
     </select>
 
-    <select id="selectCityInfo" resultType="com.rich.pojo.Goods">
-        select area from goods group by area
-    </select>
 
     <update id="updateMyself">
-        update system_user set password = #{password} ,phone = #{phone} ,email = #{email}
-        where user_name = #{userName}
+        update login_user set login_password = #{loginPassword}  ,user_phone = #{userPhone}  ,user_email = #{userEmail}
+        where login_name = #{loginName}
     </update>
 
-    <insert id="insertBuyCar">
-        insert into buy_car
-        (num, goods_id, user_id, create_time, update_time)
+    <select id="selectProductType" resultType="com.rich.pojo.Goods">
+        select pt.name productType,pt.id typeId from product p
+        left join product_type pt on pt.id = p.type_id
+        group by pt.name,pt.id
+    </select>
+
+    <insert id="insertGoodsCar">
+        insert into goods_car
+        (buy_num, product_id, user_id, create_time, update_time)
         VALUES
-        (#{num} ,#{goodsId} ,#{userId} ,#{createTime} ,#{updateTime} )
+        (#{buyNum}  ,#{productId}  ,#{userId} ,#{createTime} ,#{updateTime} )
     </insert>
 
-    <select id="selectBuyCarInfo" resultType="com.rich.vo.BuyCarInfo">
-        select b.order_id orderId,b.id id,g.name goodsName,g.img img,g.price price,b.num num from buy_car b
-        left join goods g on g.id =b.goods_id where b.user_id = #{userId} and order_id is null
+    <select id="selectGoodsCarInfo" resultType="com.rich.vo.GoodsCarInfo">
+        select g.order_id orderId,g.id id,p.product_name productName,p.product_img productImg,p.product_price,g.buy_num buyNum from goods_car g
+        left join product p on p.id =g.product_id where g.user_id = #{userId} and order_id is null
     </select>
 
-    <select id="selectOrderInfo" resultType="com.rich.vo.BuyCarInfo">
-        select g.id goodsId,ai.province,ai.city,ai.area,ai.detailsAddress,b.order_id orderId,b.id id,g.name goodsName,g.img img,g.price price,b.num num from buy_car b
-        left join goods g on g.id =b.goods_id
-        LEFT join order_info o on b.order_id = o.id
-        LEFT JOIN address_info ai on ai.id = o.address_info_id
-        where b.user_id = #{userId} and order_id is not null
+    <select id="selectOrderDetail" resultType="com.rich.vo.GoodsCarInfo">
+       select a.detailsAddress detailsAddress,a.province,a.city,a.area area,g.order_id orderId,g.id id,p.product_name productName,p.product_img productImg,p.product_price,g.buy_num buyNum from goods_car g
+        left join product p on p.id =g.product_id
+        LEFT JOIN order_info o on o.id = g.order_id
+        left join address_info a on a.id = o.address_info_id
+         where g.order_id = #{orderId}
     </select>
 
-    <delete id="deleteBuyCar">
-        DELETE from buy_car where id = #{id}
+    <select id="selectOrderInfo" resultType="com.rich.vo.OrderInfoVO">
+       select o.orderStatus,a.detailsAddress detailsAddress,a.province,a.city,a.area area,
+       o.id orderId,o.orderCode orderCode,o.price price
+       from order_info o
+        left join address_info a on a.id = o.address_info_id
+         where o.user_id = #{userId}
+    </select>
+
+    <delete id="deleteGoodsCar">
+        DELETE from goods_car where id = #{id}
     </delete>
 
     <insert id="insertOrderInfo" useGeneratedKeys="true" keyProperty="id" >
         insert into order_info
-        (goods_id, num, address_info_id, orderCode, orderStatus, price)
+        (goods_id, num, address_info_id, orderCode, orderStatus, price,user_id)
         VALUES
-        (#{goodsId} ,#{num} ,#{addressInfoId}  ,#{orderCode} ,#{orderStatus} ,#{price}  )
+        (#{goodsId} ,#{num} ,#{addressInfoId}  ,#{orderCode} ,#{orderStatus} ,#{price},#{userId}   )
 
     </insert>
 
     <update id="updateBatchList" parameterType="list" >
         <foreach collection="list" item="item" separator=";">
-            update buy_car
+            update goods_car
             <set>
                 <if test="item.orderId != 0">
                     order_id = #{item.orderId},

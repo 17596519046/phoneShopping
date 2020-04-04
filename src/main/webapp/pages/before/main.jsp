@@ -1,7 +1,7 @@
 <%@ page import="com.rich.pojo.SystemUser" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<script language="JavaScript" type="text/javascript" >
+<script language="JavaScript" type="text/javascript">
     if (window != top)
         top.location.href = location.href;
 </script>
@@ -84,7 +84,7 @@
     <meta name="spm-id" content="875.7931836/B">
 
     <title>天猫tmall.com--理想生活上天猫</title>
-    <base target="_blank">
+    <base>
     <link rel="stylesheet" href="//g.alicdn.com/??mui/global/3.0.31/global.css,zebra-pages/fp5/6.0.86/pc/css/index.css">
     <meta name="format-detection" content="telephone=no">
     <meta name="format-detection" content="date=no">
@@ -101,6 +101,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <script src="/js/jquery-3.3.1.js"></script>
     <script src="/js/jquery.min.js"></script>
+    <script src="/js/supersized-init.js"></script>
     <!--[if IE 8]>
     <style>
         .wonderful-con .card-item .item-pic img {
@@ -121,11 +122,11 @@
         }
     </style>
     <![endif]-->
-   <script>
-       function searchInfo() {
-           window.location.href = '/before/main'
-       }
-   </script>
+    <script>
+        function searchInfo() {
+            window.location.href = '/before/main'
+        }
+    </script>
 </head>
 <body class="w1230" style="">
 <div id="mallPage" class="mui-global-biz-mallfp  ">
@@ -146,196 +147,84 @@
             <b class="sn-edge"></b>
             <div class="sn-container">
                 <p id="login-info" class="sn-login-info"><em>嗨，欢迎来到脑桥商城</em>
-                    <a class="sn-login" href="/pages/before/login.jsp"
+                    <c:choose>
+                        <c:when test="${user.loginName eq null}">
+                            <a class="sn-login" href="/pages/before/login.jsp"
 
-                                                                            target="_top">请登录</a><a class="sn-register"
-                                                                                                    href="/pages/before/register.jsp"
-                                                                                                    target="_top">免费注册</a>
+                               target="_top">请登录</a>
+                            <a class="sn-register"
+                               href="/pages/before/register.jsp"
+                               target="_top">免费注册</a>
+                        </c:when>
+                        <c:otherwise>
+                            <a href="/pages/before/mySelfInfo.jsp" class="sn-login">${user.loginName}</a>
+                            &nbsp;&nbsp;
+                            &nbsp;&nbsp; <a href="/pages/before/myselfAddress.jsp" class="sn-login">收货地址</a>
+                        </c:otherwise>
+                    </c:choose>
                 </p>
                 <ul class="sn-quick-menu">
-                    <li class="sn-mytaobao menu-item j_MyTaobao">
+                    <c:choose>
+                        <c:when test="${user.loginName eq null}">
+                        </c:when>
+                        <c:otherwise>
+                            <li class="sn-mytaobao menu-item j_MyTaobao">
+                                <div class="sn-menu">
+                                    <a class="menu-hd" href="/before/selectMySelfOrderInfo?userId=${user.id}"
+                                       target="_top" rel="nofollow"
+                                       tabindex="0" aria-haspopup="true" aria-expanded="false">我的订单<b></b></a>
+                                </div>
+                            </li>
+                            <li class="sn-cart">
+                                <i class="mui-global-iconfont">󰅈</i>
+                                <a class="sn-cart-link" href="/before/selectMySelfBuyCarInfo?userId=${user.id}"
+                                   target="_top"
+                                   rel="nofollow">购物车
+                                </a>
+                                &nbsp;&nbsp; <a href="/before/loginOut" class="link-login">注销</a>
+                            </li>
+                            <li class="sn-separator"></li>
+                        </c:otherwise>
+                    </c:choose>
+                    <li class="sn-sitemap">
                         <div class="sn-menu">
-                            <a class="menu-hd" href="//i.taobao.com/my_taobao.htm" target="_top" rel="nofollow"
-                               tabindex="0" aria-haspopup="true" aria-expanded="false">我的淘宝<b></b></a>
-                            <%--<div class="menu-bd" role="menu" aria-hidden="true" id="menu-19">--%>
-                            <%--<div class="menu-bd-panel" id="myTaobaoPanel">--%>
-                            <%--<a href="//trade.taobao.com/trade/itemlist/list_bought_items.htm?t=20110530"--%>
-                            <%--target="_top" rel="nofollow">已买到的宝贝</a>--%>
-                            <%--<a href="//trade.taobao.com/trade/itemlist/list_sold_items.htm?t=20110530"--%>
-                            <%--target="_top" rel="nofollow">已卖出的宝贝</a>--%>
-                            <%--</div>--%>
-                            <%--</div>--%>
+                            <h3 class="menu-hd"><i class="mui-global-iconfont"></i><span>手机分类</span><b></b></h3>
+                            <div style="width: 400%" class="menu-bd sn-sitemap-lazy sn-sitemap-bd" data-spm="a2228l4">
+                                <style>
+                                    #site-nav .site-cont {
+                                        height: 110px;
+                                    }
+
+                                    #site-nav .site-hot {
+                                        width: 455px;
+                                    }
+
+                                    #site-nav .site-market {
+                                        width: 455px;
+                                    }
+
+                                    .w1190 #site-nav .site-hot {
+                                        width: 455px;
+                                    }
+
+                                    .w1190 #site-nav .site-market {
+                                        width: 455px;
+                                    }
+                                </style>
+                                <div class="site-cont site-help">
+                                    <ul class="site-list">
+                                        <c:forEach var="vo" items="${typeList}" varStatus="i">
+                                        <li>
+                                                <a id="productType" style="cursor: pointer";  href="/before/main?typeId=${vo.typeId}&name=${name}">${vo.productType}</a>
+
+                                        </li>
+                                        </c:forEach>
+
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </li>
-                    <%--<li class="sn-seller-center hidden j_SellerCenter">--%>
-                    <%--<a target="_top" href="//mai.taobao.com/seller_admin.htm">商家中心</a>--%>
-                    <%--</li>--%>
-                    <li class="sn-cart"><i class="mui-global-iconfont">󰅈</i>
-                        <a class="sn-cart-link" href="//cart.tmall.com/cart/myCart.htm?from=btop" target="_top"
-                           rel="nofollow">购物车
-                        </a>
-                    </li>
-                    <%--<li class="sn-favorite menu-item">--%>
-                    <%--<div class="sn-menu">--%>
-                    <%--<a class="menu-hd" href="//shoucang.taobao.com/shop_collect_list.htm?scjjc=c1" target="_top"--%>
-                    <%--rel="nofollow" tabindex="0" aria-haspopup="true" aria-expanded="false">收藏夹<b></b></a>--%>
-
-                    <%--<div class="menu-bd" role="menu" aria-hidden="true" id="menu-21">--%>
-                    <%--<div class="menu-bd-panel">--%>
-                    <%--<a href="//shoucang.taobao.com/item_collect.htm" target="_top"--%>
-                    <%--rel="nofollow">收藏的宝贝</a>--%>
-                    <%--<a href="//shoucang.taobao.com/shop_collect_list.htm" target="_top" rel="nofollow">收藏的店铺</a>--%>
-                    <%--</div>--%>
-                    <%--</div>--%>
-                    <%--</div>--%>
-                    <%--</li>--%>
-                    <li class="sn-separator"></li>
-                    <%--<li class="sn-mobile">--%>
-                    <%--<i class="mui-global-iconfont">㑈</i>--%>
-                    <%--<a title="天猫无线" target="_top" class="sn-mobile-link"--%>
-                    <%--href="//pages.tmall.com/wow/portal/act/app-download?scm=1027.1.1.1">手机版</a>--%>
-                    <%--</li>--%>
-                    <%--<li class="sn-home">--%>
-                    <%--<a href="//www.taobao.com/">淘宝网</a>--%>
-                    <%--</li>--%>
-                    <%--<li class="sn-seller menu-item">--%>
-                    <%--<div class="sn-menu J_DirectPromo">--%>
-                    <%--<a class="menu-hd" href="//mai.taobao.com" target="_top">商家支持<b></b></a>--%>
-                    <%--<div class="menu-bd sn-seller-lazy">--%>
-                    <%--<ul>--%>
-                    <%--<li><h3>商家：</h3>--%>
-                    <%--<a target="_top" href="//mai.taobao.com/">商家中心</a>--%>
-                    <%--<a class="sitemap-right" target="_top"--%>
-                    <%--href="//guize.tmall.com/?acm=lb-tms-1104633-90536.1003.4.268545&amp;scm=1003.4.lb-tms-1104633-90536.OTHER_6_268545">天猫规则</a>--%>
-                    <%--<a class="sitemap-right" target="_top"--%>
-                    <%--href="//zhaoshang.tmall.com/?acm=lb-tms-1104633-90536.1003.4.268545&amp;scm=1003.4.lb-tms-1104633-90536.OTHER_2_268545">商家入驻</a>--%>
-                    <%--<a target="_top"--%>
-                    <%--href="//fw.tmall.com/?acm=lb-tms-1104633-90536.1003.4.268545&amp;scm=1003.4.lb-tms-1104633-90536.OTHER_3_268545">运营服务</a>--%>
-                    <%--<a class="sitemap-right" target="_top"--%>
-                    <%--href="//www.tmall.com/wow/seller/act/tmallpinkong">商家品控</a> <a target="_top"--%>
-                    <%--href="//fuwu.tmall.com/?acm=lb-tms-1104633-90536.1003.4.268545&amp;scm=1003.4.lb-tms-1104633-90536.OTHER_5_268545">商家工具</a>--%>
-                    <%--<a target="_top" href="//zhiku.tmall.com">天猫智库</a>--%>
-                    <%--<a class="sitemap-right" target="_top"--%>
-                    <%--href="//maowo.tmall.com/?acm=lb-tms-1104633-90536.1003.4.268545&amp;scm=1003.4.lb-tms-1104633-90536.OTHER_8_268545">喵言喵语</a>--%>
-                    <%--</li>--%>
-                    <%--<li><h3>帮助：</h3>--%>
-                    <%--<a target="_top" href="//helpcenter.tmall.com/index?from=high">帮助中心</a>--%>
-                    <%--<a target="_top" href="//infob.taobao.com/help">问商友</a>--%>
-                    <%--</li>--%>
-                    <%--</ul>--%>
-                    <%--</div>--%>
-                    <%--</div>--%>
-                    <%--</li>--%>
-                    <%--<li class="sn-sitemap">--%>
-                    <%--<div class="sn-menu">--%>
-                    <%--<h3 class="menu-hd"><i class="mui-global-iconfont"></i><span>网站导航</span><b></b></h3>--%>
-                    <%--<div class="menu-bd sn-sitemap-lazy sn-sitemap-bd" data-spm="a2228l4">--%>
-                    <%--<style>--%>
-                    <%--#site-nav .site-cont {--%>
-                    <%--height: 110px;--%>
-                    <%--}--%>
-
-                    <%--#site-nav .site-hot {--%>
-                    <%--width: 455px;--%>
-                    <%--}--%>
-
-                    <%--#site-nav .site-market {--%>
-                    <%--width: 455px;--%>
-                    <%--}--%>
-
-                    <%--.w1190 #site-nav .site-hot {--%>
-                    <%--width: 455px;--%>
-                    <%--}--%>
-
-                    <%--.w1190 #site-nav .site-market {--%>
-                    <%--width: 455px;--%>
-                    <%--}--%>
-                    <%--</style>--%>
-                    <%--<div class="site-cont site-hot"><h2>热点推荐<span>Hot</span></h2>--%>
-                    <%--<ul class="site-list">--%>
-                    <%--<li>--%>
-                    <%--<a href="//chaoshi.tmall.com?acm=lb-tms-1289015-81300.1003.4.247689&amp;scm=1003.4.lb-tms-1289015-81300.OTHER_1_247689">天猫超市</a>--%>
-                    <%--</li>--%>
-                    <%--<li>--%>
-                    <%--<a href="//miao.tmall.com?acm=lb-tms-1289015-81300.1003.4.247689&amp;scm=1003.4.lb-tms-1289015-81300.OTHER_2_247689">喵鲜生</a>--%>
-                    <%--</li>--%>
-                    <%--<li>--%>
-                    <%--<a href="//new3c.tmall.com/?acm=lb-tms-1289015-81300.1003.4.247689&amp;scm=1003.4.lb-tms-1289015-81300.OTHER_3_247689">科技新品<i--%>
-                    <%--class="sn-sitemap-icon sn-sitemap-icon-new"></i> </a></li>--%>
-                    <%--<li>--%>
-                    <%--<a href="//www.tmall.com/wow/fushi/act/nvzhuangnew?acm=lb-tms-1289015-81300.1003.4.247689&amp;scm=1003.4.lb-tms-1289015-81300.OTHER_4_247689">女装新品<i--%>
-                    <%--class="sn-sitemap-icon  sn-sitemap-icon-hot "></i> </a></li>--%>
-                    <%--<li>--%>
-                    <%--<a href="//ku.tmall.com?acm=lb-tms-1289015-81300.1003.4.247689&amp;scm=1003.4.lb-tms-1289015-81300.OTHER_5_247689">酷玩街</a>--%>
-                    <%--</li>--%>
-                    <%--<li>--%>
-                    <%--<a href="//www.tmall.com/wow/fushi/act/neiyinew?acm=lb-tms-1289015-81300.1003.4.247689&amp;scm=1003.4.lb-tms-1289015-81300.OTHER_6_247689">内衣新品<i--%>
-                    <%--class="sn-sitemap-icon  sn-sitemap-icon-hot "></i> </a></li>--%>
-                    <%--<li>--%>
-                    <%--<a href="//mei.tmall.com/shiyong.htm?acm=lb-tms-1289015-81300.1003.4.247689&amp;scm=1003.4.lb-tms-1289015-81300.OTHER_7_247689">试美妆</a>--%>
-                    <%--</li>--%>
-                    <%--<li>--%>
-                    <%--<a href="//www.tmall.com/wow/fushi/act/sportsnew?acm=lb-tms-1289015-81300.1003.4.247689&amp;scm=1003.4.lb-tms-1289015-81300.OTHER_8_247689">运动新品</a>--%>
-                    <%--</li>--%>
-                    <%--<li>--%>
-                    <%--<a href="//www.tmall.com/wow/fushi/act/nanzhuangnew?acm=lb-tms-1289015-81300.1003.4.247689&amp;scm=1003.4.lb-tms-1289015-81300.OTHER_9_247689">时尚先生<i--%>
-                    <%--class="sn-sitemap-icon  sn-sitemap-icon-hot "></i> </a></li>--%>
-                    <%--<li>--%>
-                    <%--<a href="//baby.tmall.com?acm=lb-tms-1289015-81300.1003.4.247689&amp;scm=1003.4.lb-tms-1289015-81300.OTHER_11_247689">精明妈咪</a>--%>
-                    <%--</li>--%>
-                    <%--<li>--%>
-                    <%--<a href="//chi.tmall.com/?acm=lb-tms-1289015-81300.1003.4.247689&amp;scm=1003.4.lb-tms-1289015-81300.OTHER_12_247689">吃乐会<i--%>
-                    <%--class="sn-sitemap-icon sn-sitemap-icon-new"></i> </a></li>--%>
-                    <%--<li>--%>
-                    <%--<a href="//b.tmall.com/?acm=lb-tms-1289015-81300.1003.4.247689&amp;scm=1003.4.lb-tms-1289015-81300.OTHER_13_247689">企业采购</a>--%>
-                    <%--</li>--%>
-                    <%--<li>--%>
-                    <%--<a href="//vip.tmall.com/vip/index.htm?acm=lb-tms-1289015-81300.1003.4.247689&amp;scm=1003.4.lb-tms-1289015-81300.OTHER_14_247689">会员积分</a>--%>
-                    <%--</li>--%>
-                    <%--<li>--%>
-                    <%--<a href="//www.tmall.hk/?acm=lb-tms-1289015-81300.1003.4.247689&amp;scm=1003.4.lb-tms-1289015-81300.OTHER_15_247689">天猫国际</a>--%>
-                    <%--</li>--%>
-                    <%--<li>--%>
-                    <%--<a href="//pages.tmall.com/wow/seller/act/ebusiness2?spm=a223k.7780452.7195644330.3&amp;acm=lb-zebra-18822-2134013.1003.4.1914591&amp;scm=1003.4.lb-zebra-18822-2134013.OTHER_14975441556961_1914591#tab=%E6%B5%99%E6%B1%9F%E5%88%B6%E9%80%A0&amp;sub=%E6%B5%99%E6%B1%9F%E5%88%B6%E9%80%A0">品质频道</a>--%>
-                    <%--</li>--%>
-                    <%--</ul>--%>
-                    <%--</div>--%>
-                    <%--&lt;%&ndash;<div class="site-cont site-market"><h2>行业市场<span>Market</span></h2>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<ul class="site-list">&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<li><a href="//mei.tmall.com">美妆</a></li>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<li><a href="//3c.tmall.com">电器</a></li>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<li><a href="//nvzhuang.tmall.com">女装<i&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;class="sn-sitemap-icon  sn-sitemap-icon-hot "></i> </a></li>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<li><a href="//nanzhuang.tmall.com">男装<i&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;class="sn-sitemap-icon  sn-sitemap-icon-hot "></i> </a></li>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<li><a href="//nvxie.tmall.com">女鞋</a></li>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<li><a href="//nanxie.tmall.com">男鞋</a></li>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<li><a href="//neiyi.tmall.com">内衣<i&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;class="sn-sitemap-icon  sn-sitemap-icon-hot "></i> </a></li>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<li><a href="//bag.tmall.com">箱包</a></li>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<li><a href="//sports.tmall.com">运动</a></li>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<li><a href="//baby.tmall.com">母婴</a></li>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<li><a href="//jia.tmall.com">家装</a></li>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<li><a href="//yao.tmall.com">医药</a></li>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<li><a href="//food.tmall.com">食品</a></li>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<li><a href="//dai.tmall.com/">配饰<i&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;class="sn-sitemap-icon sn-sitemap-icon-new"></i></a></li>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<li><a href="//car.tmall.com/">汽车</a></li>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;</ul>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<div class="site-cont site-help"><h2>服务指南<span>Help</span></h2>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<ul class="site-list">&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<li>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<a href="//consumerservice.tmall.com/online-help">帮助中心 </a>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;</li>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<li><a href="//www.tmall.com/wow/seller/act/pinkong">品质保障 </a></li>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<li><a href="//www.tmall.com/wow/seller/act/special-service">特色服务 </a></li>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<li><a href="//www.tmall.com/wow/seller/act/seven-day">7天退换货 </a></li>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;</ul>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-                    <%--</div>--%>
-                    <%--</div>--%>
-                    <%--</li>--%>
                 </ul>
             </div>
         </div>
@@ -365,7 +254,7 @@
 
                     <div id="mallSearch" class="mall-search">
                         <form name="searchTop" action=""
-                              class="mallSearch-form clearfix" target="_top" >
+                              class="mallSearch-form clearfix" target="_top">
                             <fieldset>
                                 <legend></legend>
                                 <div class="mallSearch-input clearfix">
@@ -373,7 +262,7 @@
                                     <div class="s-combobox" id="">
                                         <div class="s-combobox-input-wrap">
                                             <input type="text" name="productName" autocomplete="off"
-
+                                                   value="${name}"
                                                    id="mq"
                                                    title="请输入搜索文字" aria-label="请输入搜索文字">
                                         </div>
@@ -407,7 +296,7 @@
             }
         </style>
         <div class="j_category category-con">
-            <div  class="category-inner-con j_categoryInnerCon j_categoryTab">
+            <div class="category-inner-con j_categoryInnerCon j_categoryTab">
                 <div class="j_logo  logo-con" data-spm="2015002" style="margin-top: -11%">
                     <img class="tmall-logo-img" src="/img/image/logo.jpg"
                          style="margin: 1px auto;;" width="240px" height="130px">
@@ -418,7 +307,7 @@
                 <div class="slider-decoration left"></div>
                 <div class="slider-decoration right"></div>
 
-                <div  class="banner-slider j_bannerSlider">
+                <div class="banner-slider j_bannerSlider">
                     <div class="slider-content loading">
 
 
@@ -646,22 +535,22 @@
 
                     <ul class="wonderful-line  j_exposureExtra1 ">
 
-<c:forEach var="po" items="${list}" varStatus="i">
-    <form id="${po.id}goodsForm" action="/before/goodsDetail" method="post">
-    <input name="productName" value="${po.productName}" type="hidden">
-    <input name="productImg" value="${po.productImg}" type="hidden">
-    <input name="productDetail" value="${po.productDetail}" type="hidden">
-    <input name="productPrice" value="${po.productPrice}" type="hidden">
-    <input name="id" value="${po.id}" type="hidden">
-    <input name="productNum" value="${po.productNum}" type="hidden">
-                        <li class="wonderful-item ">
-                            <a class="card-item  "
-                               href="#">
+                        <c:forEach var="po" items="${list}" varStatus="i">
+                            <form id="${po.id}goodsForm" action="/before/goodsDetail" target="_top" method="post">
+                                <input name="productName" value="${po.productName}" type="hidden">
+                                <input name="productImg" value="${po.productImg}" type="hidden">
+                                <input name="productDetail" value="${po.productDetail}" type="hidden">
+                                <input name="productPrice" value="${po.productPrice}" type="hidden">
+                                <input name="id" value="${po.id}" type="hidden">
+                                <input name="productNum" value="${po.productNum}" type="hidden">
+                                <li class="wonderful-item " onclick="submit('${po.id}')">
+                                    <a class="card-item  "
+                                       href="#">
             <span class="item-pic">
             <img src="${po.productImg}"
                  width="100%">
                 </span>
-                                <span class="item-info">
+                                        <span class="item-info">
                     <span class="item-desc">
                         <em class="item-name" title="1LINING李宁正品 新款男子开衫无帽卫衣外套 运动服AWDM093-1-4">${po.productName}</em>
                     </span>
@@ -682,10 +571,16 @@
 
                     </span>
                 </span>
-                            </a>
-                        </li>
-    </form>
-</c:forEach>
+                                    </a>
+                                </li>
+                            </form>
+                            <script>
+                                function submit(s) {
+                                    var name = s + "goodsForm";
+                                    $("#" + name).submit();
+                                }
+                            </script>
+                        </c:forEach>
                     </ul>
                 </div>
             </div>
@@ -696,7 +591,8 @@
     <div id="footer" data-spm="a2226n1" style="display: block;min-height: 0px">
         <div id="tmall-ensure">
 
-            <div class="mui-global-fragment-load" data-fragment="tmbase/global_footer_ensure"><a href="//pages.tmall.com/wow/seller/act/newpinzhibaozhang"></a>
+            <div class="mui-global-fragment-load" data-fragment="tmbase/global_footer_ensure"><a
+                    href="//pages.tmall.com/wow/seller/act/newpinzhibaozhang"></a>
                 <a href="//www.tmall.com/wow/seller/act/seven-day"></a>
                 <a href="//www.tmall.com/wow/seller/act/special-service"></a>
                 <a href="//service.tmall.com/support/tmall/tmallHelp.htm"></a></div>

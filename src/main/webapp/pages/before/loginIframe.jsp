@@ -1645,7 +1645,7 @@
                                                 {"display":"block"}
                                             );
                                         }else {
-                                            window.location.href = "/pages/before/main.jsp";
+                                            window.location.href = "/before/main";
                                         }
                                     })
                                 }
@@ -1666,9 +1666,9 @@
                         <div class="login-links">
 
 
-                            <a href="https://passport.taobao.com/ac/password_find.htm?from_site=0&amp;login_id=&amp;lang=zh_CN&amp;app_name=tmall&amp;tracelog=signin_main_pass"
-                               tabindex="6" class="forget-pwd" target="_blank">
-                                忘记密码</a>
+                            <%--<a href="https://passport.taobao.com/ac/password_find.htm?from_site=0&amp;login_id=&amp;lang=zh_CN&amp;app_name=tmall&amp;tracelog=signin_main_pass"--%>
+                               <%--tabindex="6" class="forget-pwd" target="_blank">--%>
+                                <%--忘记密码</a>--%>
 
                             <%--<a href="https://passport.taobao.com/ac/nick_find.htm?from_site=0&amp;lang=zh_CN&amp;app_name=tmall"--%>
                                <%--target="_blank">忘记会员名</a>--%>

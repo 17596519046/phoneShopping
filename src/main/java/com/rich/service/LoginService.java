@@ -1,6 +1,8 @@
 package com.rich.service;
 import com.rich.pojo.*;
-import com.rich.vo.BuyCarInfo;
+import com.rich.vo.GoodsCarInfo;
+import com.rich.vo.OrderInfoVO;
+
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
@@ -24,6 +26,8 @@ public interface LoginService {
 
     List<AddressInfo> selectListAddressInfo(int id);
 
+    int cancelOrder(OrderInfo orderInfo);
+
     AddressInfo selectAddressInfo(AddressInfo addressInfo);
 
     AddressInfo selectAddressMyselfInfo(AddressInfo addressInfo);
@@ -34,17 +38,19 @@ public interface LoginService {
 
     List<Goods> selectAllProductInfo(Goods goods);
 
-    List<Goods> selectAllArea();
+    List<Goods> selectProductType();
 
-    int insertBuyCar(BuyCar buyCar);
+    int insertGoodsCar(BuyCar buyCar);
 
-    List<BuyCarInfo> selectBuyCarInfo(BuyCar buyCar);
+    List<GoodsCarInfo> selectGoodsCarInfo(BuyCar buyCar);
 
-    List<BuyCarInfo> selectOrderInfo(BuyCar buyCar);
+    List<GoodsCarInfo> selectOrderDetail(BuyCar buyCar);
 
-    String selectAllPrice(List<BuyCarInfo> list);
+    List<OrderInfoVO> selectOrderInfo(BuyCar buyCar);
 
-    int deleteBuyCar(int id);
+    String selectAllPrice(List<GoodsCarInfo> list);
+
+    int deleteGoodsCar(int id);
 
     int settleOrderInfo(OrderInfo orderInfo, HttpServletRequest request);
 

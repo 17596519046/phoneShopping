@@ -3,20 +3,20 @@ package com.rich.vo;
 import lombok.Data;
 
 @Data
-public class BuyCarInfo {
+public class GoodsCarInfo {
 
     /***
      * 商品名称
      */
-    private String goodsName;
+    private String productName;
     /***
      * 商品价格
      */
-    private String price;
+    private String productPrice;
     /***
      * 商品购买数量
      */
-    private int num;
+    private int buyNum;
     /***
      * 主键id
      */
@@ -28,11 +28,15 @@ public class BuyCarInfo {
     /***
      * 商品图片地址
      */
-    private String img;
+    private String productImg;
     /***
      * 订单id
      */
     private int orderId;
+    /***
+     * 订单状态
+     */
+    private int orderStatus;
 
     /**
      *省

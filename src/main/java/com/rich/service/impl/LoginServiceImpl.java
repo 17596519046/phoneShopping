@@ -3,7 +3,8 @@ package com.rich.service.impl;
 import com.rich.mapper.LoginMapper;
 import com.rich.pojo.*;
 import com.rich.service.LoginService;
-import com.rich.vo.BuyCarInfo;
+import com.rich.vo.GoodsCarInfo;
+import com.rich.vo.OrderInfoVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -97,6 +98,16 @@ public class LoginServiceImpl implements LoginService {
         return loginMapper.selectListAddress(id);
     }
 
+    /***
+     * 取消订单
+     * @param orderInfo
+     * @return
+     */
+    @Override
+    public int cancelOrder(OrderInfo orderInfo) {
+        return loginMapper.cancelOrder(orderInfo);
+    }
+
     @Override
     public AddressInfo selectAddressInfo(AddressInfo addressInfo) {
         return loginMapper.selectAddressInfo(addressInfo);
@@ -142,8 +153,8 @@ public class LoginServiceImpl implements LoginService {
      * @return
      */
     @Override
-    public List<Goods> selectAllArea() {
-        return loginMapper.selectCityInfo();
+    public List<Goods> selectProductType() {
+        return loginMapper.selectProductType();
     }
 
     /***
@@ -152,11 +163,11 @@ public class LoginServiceImpl implements LoginService {
      * @return
      */
     @Override
-    public int insertBuyCar(BuyCar buyCar) {
+    public int insertGoodsCar(BuyCar buyCar) {
         Date date = new Date();
         buyCar.setCreateTime(date);
         buyCar.setUpdateTime(date);
-        return loginMapper.insertBuyCar(buyCar);
+        return loginMapper.insertGoodsCar(buyCar);
     }
 
     /***
@@ -165,12 +176,27 @@ public class LoginServiceImpl implements LoginService {
      * @return
      */
     @Override
-    public List<BuyCarInfo> selectBuyCarInfo(BuyCar buyCar) {
-        return loginMapper.selectBuyCarInfo(buyCar);
+    public List<GoodsCarInfo> selectGoodsCarInfo(BuyCar buyCar) {
+        return loginMapper.selectGoodsCarInfo(buyCar);
     }
 
+    /***
+     * 查看订单详情
+     * @param buyCar
+     * @return
+     */
     @Override
-    public List<BuyCarInfo> selectOrderInfo(BuyCar buyCar) {
+    public List<GoodsCarInfo> selectOrderDetail(BuyCar buyCar) {
+        return loginMapper.selectOrderDetail(buyCar);
+    }
+
+    /***
+     * 查询订单信息
+     * @param buyCar
+     * @return
+     */
+    @Override
+    public List<OrderInfoVO> selectOrderInfo(BuyCar buyCar) {
         return loginMapper.selectOrderInfo(buyCar);
     }
 
@@ -180,13 +206,13 @@ public class LoginServiceImpl implements LoginService {
      * @return
      */
     @Override
-    public String selectAllPrice(List<BuyCarInfo> list) {
+    public String selectAllPrice(List<GoodsCarInfo> list) {
         if (null != list) {
             BigDecimal price = new BigDecimal("0.00");
-            for (BuyCarInfo vo : list) {
-                if (null != vo.getPrice()) {
-                    String money = vo.getPrice();
-                    int num = vo.getNum();
+            for (GoodsCarInfo vo : list) {
+                if (null != vo.getProductPrice()) {
+                    String money = vo.getProductPrice();
+                    int num = vo.getBuyNum();
                     BigDecimal b = new BigDecimal(money);
                     BigDecimal number = new BigDecimal(num);
                     BigDecimal mon = number.multiply(b).setScale(2, BigDecimal.ROUND_HALF_UP);
@@ -204,8 +230,8 @@ public class LoginServiceImpl implements LoginService {
      * @return
      */
     @Override
-    public int deleteBuyCar(int id) {
-        return loginMapper.deleteBuyCar(id);
+    public int deleteGoodsCar(int id) {
+        return loginMapper.deleteGoodsCar(id);
     }
 
     /****
@@ -219,14 +245,18 @@ public class LoginServiceImpl implements LoginService {
         String code = "YU" + format.format(new Date()) + "" + String.valueOf(Math.random()).substring(2, 5);
         SystemUser systemUser = (SystemUser) request.getSession().getAttribute("user");
         BuyCar buyCar = new BuyCar();
+        int i = 0;
         buyCar.setUserId(systemUser.getId());
-        List<BuyCarInfo> list = loginMapper.selectBuyCarInfo(buyCar);
-        orderInfo.setOrderStatus(1);
-        orderInfo.setOrderCode(code);
-        int id = loginMapper.insertOrderInfo(orderInfo);
-        for(BuyCarInfo vo : list){
-            vo.setOrderId(orderInfo.getId());
+        List<GoodsCarInfo> list = loginMapper.selectGoodsCarInfo(buyCar);
+        if(list.size() > 0){
+            orderInfo.setOrderStatus(1);
+            orderInfo.setOrderCode(code);
+            int id = loginMapper.insertOrderInfo(orderInfo);
+            for(GoodsCarInfo vo : list){
+                vo.setOrderId(orderInfo.getId());
+            }
+            i = loginMapper.updateBatchList(list);
         }
-        return loginMapper.updateBatchList(list);
+        return i;
     }
 }

@@ -34,8 +34,8 @@
 <body>
 <div class="header">
     <div class="logo-con w clearfix">
-            <a href="#" style="height: 60%;background-image: url('/img/image/yu.jpg');background-size: cover;background-position: 0px -50px"  class="logo ">
-        </a>
+            <%--<a href="#" style="height: 60%;background-image: url('/img/image/yu.jpg');background-size: cover;background-position: 0px -50px"  class="logo ">--%>
+        <%--</a>--%>
         <div class="logo-title">个人信息</div>
     </div>
 </div>
@@ -51,22 +51,22 @@
                 <div id="step2-wrap" style="display:block;">
                     <div id="loginName"  style="border: 1px solid #999;width: 100%;height: 54px;margin-bottom: 20px">
                         <label style="margin-left: 3%">用 户&nbsp; 名</label>
-                        <input id="userName" value="${user.userName}" readonly="readonly" name="userName" onblur="registerVerify()" style="margin-left: 1%;border: 0px;width: 80%;height: 54px;margin-bottom: 20px"/>
+                        <input id="userName" value="${user.loginName}" readonly="readonly" name="loginName" onblur="registerVerify()" style="margin-left: 1%;border: 0px;width: 80%;height: 54px;margin-bottom: 20px"/>
                         <i id="userInfo" style="position: absolute;margin-top: 10px;margin-left: 1%;color: green"></i>
                     </div>
                     <div style="border: 1px solid #999;width: 100%;height: 54px;margin-bottom: 20px">
                         <label style="margin-left: 3%">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</label>
-                        <input value="${user.password}" name="password" type="password" id="password" onblur="passwordVerify()" style="margin-left: 1%;border: 0px;width: 80%;height: 54px;margin-bottom: 20px"/>
+                        <input value="${user.loginPassword}" name="loginPassword" type="password" id="password" onblur="passwordVerify()" style="margin-left: 1%;border: 0px;width: 80%;height: 54px;margin-bottom: 20px"/>
                         <i id="passwordInfo" style="position: absolute;margin-top: 10px;margin-left: 1%;color: green"></i>
                     </div>
                     <div style="border: 1px solid #999;width: 100%;height: 54px;margin-bottom: 20px">
                         <label style="margin-left: 3%">手 机 &nbsp;号</label>
-                        <input value="${user.phone}" id="phone" onblur="phoneVerify()" name="phone" style="margin-left: 1%;border: 0px;width: 80%;height: 54px;margin-bottom: 20px"/>
+                        <input value="${user.userPhone}" id="phone" onblur="phoneVerify()" name="userPhone" style="margin-left: 1%;border: 0px;width: 80%;height: 54px;margin-bottom: 20px"/>
                         <i id="phoneInfo" style="position: absolute;margin-top: 10px;margin-left: 1%"></i>
                     </div>
                     <div style="border: 1px solid #999;width: 100%;height: 54px;margin-bottom: 20px">
                         <label style="margin-left: 3%">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
-                        <input value="${user.email}" id="email" onblur="emailVerify()" name="email" style="margin-left: 1%;border: 0px;width: 80%;height: 54px;margin-bottom: 20px"/>
+                        <input value="${user.userEmail}" id="email" onblur="emailVerify()" name="userEmail" style="margin-left: 1%;border: 0px;width: 80%;height: 54px;margin-bottom: 20px"/>
                         <i id="emailInfo" style="position: absolute;margin-top: 10px;margin-left: 1.5%"></i>
                     </div>
                     <div>

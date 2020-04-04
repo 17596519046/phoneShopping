@@ -10,6 +10,8 @@ import lombok.Data;
 public class Goods{
 	//id
 	private int	id;
+
+	private Integer	typeId;
 	/**
 	*商品名称
 	*/
@@ -23,9 +25,9 @@ public class Goods{
 	*/
 	private String	productDetail;
 	/**
-	*城市
+	*商品类型
 	*/
-	private String	productArea;
+	private String	productType;
 	/**
 	*库存数量
 	*/

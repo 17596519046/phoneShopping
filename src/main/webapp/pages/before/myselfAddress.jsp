@@ -29,8 +29,8 @@
 <body>
 <div class="header">
   <div class="logo-con w clearfix">
-    <a href="#" style="height: 60%;background-image: url('/img/image/yu.jpg');background-size: cover;background-position: 0px -50px"  class="logo ">
-    </a>
+    <%--<a href="#" style="height: 60%;background-image: url('/img/image/yu.jpg');background-size: cover;background-position: 0px -50px"  class="logo ">--%>
+    <%--</a>--%>
     <div class="logo-title">收货地址</div>
   </div>
 </div>
