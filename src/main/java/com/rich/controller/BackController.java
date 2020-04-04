@@ -1,13 +1,10 @@
 package com.rich.controller;
 
 import com.rich.pojo.User;
-import com.rich.pojo.User;
 import com.rich.service.BackService;
-import com.rich.vo.MenuInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -20,6 +17,12 @@ import java.util.Map;
 @RequestMapping("/back")
 @Controller
 public class BackController {
+
+    /**
+     * 超级管理员 可以添加修改任意管理员信息； 可以修改删除会员信息，但是不能添加会员
+     * 普通管理员 可以查看管理员信息；        可以查看会员信息；
+     */
+
 
     @Autowired
     BackService backService;

@@ -25,7 +25,7 @@
     <div id="sidebar" class="sidebar py-3" style="width: 20%; float: left">
         <div class="list-group">
             <a href="/back/user" target="right" class="list-group-item">管理员管理</a>
-            <a href="/back/login" target="right" class="list-group-item">手机类别管理</a>
+            <a href="/product/product" target="right" class="list-group-item">手机类别管理</a>
             <a href="/back/vip" target="right" class="list-group-item">会员管理</a>
             <a href="/back/phone" target="right" class="list-group-item">手机管理</a>
             <a href="/back/order" target="right" class="list-group-item">订单管理</a>
@@ -33,7 +33,7 @@
     </div>
     <div class="sidebar py-3" style="width: 79%; float: right">
         <div class="embed-responsive embed-responsive-4by3">
-            <iframe id="aa" name="right" class="embed-responsive-item" src="/back/login"></iframe>
+            <iframe id="aa" name="right" class="embed-responsive-item" src="/back/user"></iframe>
         </div>
     </div>
 </div>
