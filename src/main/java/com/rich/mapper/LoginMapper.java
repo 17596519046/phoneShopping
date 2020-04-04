@@ -12,11 +12,11 @@ public interface LoginMapper {
 
     List<EvaluateInnerVO> selectEvaluate(EvaluateInner evaluateInner);
 
-    int selectUserCount(SystemUser systemUser);
+    int selectUserCount(User user);
 
-    SystemUser selectUserInfo(SystemUser systemUser);
+    User selectUserInfo(User user);
 
-    int insertUserInfo(SystemUser systemUser);
+    int insertUserInfo(User user);
 
     int insertAddressInfo(AddressInfo addressInfo);
 
@@ -34,11 +34,11 @@ public interface LoginMapper {
 
     int cancelOrder(OrderInfo orderInfo);
 
-    int updatePasswordInfo(SystemUser systemUser);
+    int updatePasswordInfo(User user);
 
     List<Goods> selectAllProductInfo(Goods goods);
 
-    int updateMyself(SystemUser systemUser);
+    int updateMyself(User user);
 
     int insertGoodsCar(BuyCar buyCar);
 

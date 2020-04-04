@@ -1,6 +1,7 @@
 package com.rich.controller;
 
-import com.rich.pojo.SystemUser;
+import com.rich.pojo.User;
+import com.rich.pojo.User;
 import com.rich.service.BackService;
 import com.rich.vo.MenuInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 
-@RequestMapping("/back/")
+@RequestMapping("/back")
 @Controller
 public class BackController {
 
@@ -37,107 +38,88 @@ public class BackController {
      * 跳到登陆页面
      * @return
      */
-    @RequestMapping("/backLogin")
+    @RequestMapping("/login")
     public String backLogin() {
         // 跳到登陆页面
         return "pages/back/login";
     }
 
-    /***
-     * 跳到登陆页面
-     * @return
-     */
-    @RequestMapping("/user")
-    public String user() {
-        // 跳到登陆页面
-        return "pages/back/user";
-    }
-
-
     /**
      * 后台登录接口
-     * @param systemUser 实体类
+     *
      * @return
      */
-    @RequestMapping("/login")
+    @RequestMapping("/toLogin")
     @ResponseBody
-    public Map selectAll(@RequestBody SystemUser systemUser, HttpServletRequest request) {
+    public Map selectAll(String username, String password, HttpServletRequest request) {
         // service层调用后台登陆接口
-        boolean b = backService.backLogin(systemUser, request);
+        boolean b = backService.tologin(username, password, request);
         HashMap map = new HashMap();
-        map.put("flag", 1);
-        if (!b){
-            map.put("flag", 0);
-            map.put("msg","账号或密码不正确");
-            return map;
-        }
+        map.put("success", b);
         return map;
-    }
-
-    /**
-     * 获取菜单权限
-     * @return
-     */
-    @RequestMapping("home")
-    @ResponseBody
-    public List<MenuInfo> selectMenuInfo(Model model,HttpServletRequest request) {
-        List<MenuInfo> menuList = backService.selectMenuInfo(request);
-        model.addAttribute("menuList",menuList);
-        return menuList;
     }
 
     /**
      * 修改后台用户信息
+     *
      * @return
      */
-    @RequestMapping("updateSystemUser")
-    @ResponseBody
-    public Map updateSystemUser(SystemUser systemUser) {
-        boolean b = true;
-        if (systemUser.getId() != 0) {
-            b = backService.updateSystemUser(systemUser);
+    @RequestMapping("/updateUser")
+    public String updateUser(User user) {
+        // 如果用户id不为0 说明是修改 为0 或者为 null 是新增
+        if (user.getId() != null && user.getId() != 0) {
+            backService.updateSystemUser(user);
         } else {
-            b = backService.saveSystemUser(systemUser);
+            backService.saveSystemUser(user);
         }
-        HashMap map = new HashMap();
-        if (b){
-            map.put("flag", 1);
-            map.put("msg","修改成功");
-            return map;
-        }
-        map.put("flag", 0);
-        map.put("msg","修改失败");
-        return map;
+        return "redirect:user";
     }
 
     /**
      * 删除用户
+     *
      * @return
      */
-    @RequestMapping("deleteUser")
-    @ResponseBody
-    public void deleteUser(Integer userId) {
+    @RequestMapping("/deleteUser")
+    public String deleteUser(Integer userId) {
         backService.deleteUser(userId);
+        return "redirect:user";
     }
 
     /**
-     * 查询所有用户信息
+     * 查询管理员
+     *
      * @return
      */
-    @RequestMapping("selectSystemUserList")
-    @ResponseBody
-    public List<SystemUser> selectSystemUserList(Model model) {
-        List<SystemUser> userList = backService.selectSystemUserList();
-        for (SystemUser systemUser : userList) {
-            if (systemUser.getRoleId() == 1) {
-                systemUser.setRoleName("管理员");
-            }
-            if (systemUser.getRoleId() == 0) {
-                systemUser.setRoleName("普通管理员");
-            }
-        }
-        model.addAttribute("userList",userList);
-        return userList;
+    @RequestMapping("/user")
+    public String selectSystemUserList(Model model) {
+        List<User> userList = backService.selectSystemUserList(1);
+        model.addAttribute("all", userList);
+        return "pages/back/user";
+    }
+
+    /**
+     * 查询会员用户
+     *
+     * @return
+     */
+    @RequestMapping("/vip")
+    public String vip(Model model) {
+        List<User> userList = backService.selectSystemUserList(0);
+        model.addAttribute("all", userList);
+        return "pages/back/user";
+    }
+
+    /**
+     * 通过id获取一个用户
+     *
+     * @return
+     */
+    @RequestMapping("/getOneUser")
+    public String getOneUser(Model model, Integer userId) {
+        User user = backService.getOneUser(userId);
+        model.addAttribute("user", user);
+        return "pages/back/user-update";
     }
 
 }

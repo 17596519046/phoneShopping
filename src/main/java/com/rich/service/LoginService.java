@@ -8,15 +8,15 @@ import java.util.List;
 
 public interface LoginService {
 
-    int selectUserCount(SystemUser systemUser);
+    int selectUserCount(User user);
 
-    SystemUser selectUserInfo(SystemUser systemUser);
+    User selectUserInfo(User user);
 
     int insertEvaluate(EvaluateInner evaluateInner);
 
     List<EvaluateInnerVO> selectListEvaluate(EvaluateInner evaluateInner);
 
-    int insertUserInfo(SystemUser systemUser);
+    int insertUserInfo(User user);
 
     int insertAddressInfo(AddressInfo addressInfo);
 
@@ -32,9 +32,9 @@ public interface LoginService {
 
     AddressInfo selectAddressMyselfInfo(AddressInfo addressInfo);
 
-    int updateInfo(SystemUser systemUser);
+    int updateInfo(User user);
 
-    int updatePasswordInfo(SystemUser systemUser);
+    int updatePasswordInfo(User user);
 
     List<Goods> selectAllProductInfo(Goods goods);
 

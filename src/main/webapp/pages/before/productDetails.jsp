@@ -1,4 +1,4 @@
-<%@ page import="com.rich.pojo.SystemUser" %>
+<%@ page import="com.rich.pojo.User" %>
 <%@ page import="com.rich.service.LoginService" %>
 <%@ page import="com.rich.service.impl.LoginServiceImpl" %>
 <%@ page import="com.rich.pojo.EvaluateInner" %>
@@ -7,6 +7,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="org.springframework.beans.factory.annotation.Autowired" %>
 <%@ page import="org.springframework.context.support.ClassPathXmlApplicationContext" %>
+<%@ page import="com.rich.pojo.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
@@ -15,7 +16,7 @@
     String img = request.getParameter("img");
     String price = request.getParameter("price");
     String id = request.getParameter("id");
-    SystemUser user = (SystemUser) request.getSession().getAttribute("user");
+    User user = (User) request.getSession().getAttribute("user");
     int userId = 0;
     if (null != user) {
         userId = user.getId();

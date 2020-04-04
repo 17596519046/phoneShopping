@@ -2,32 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.rich.mapper.BackLoginMapper">
 
-    <select id="selectAccountPassword" resultType="com.rich.pojo.SystemUser">
-        select * from system_user where user_name=#{userName} and password=#{password} and status = 1
-    </select>
-
-    <select id="selectRoleMenuList" resultType="com.rich.vo.MenuInfo">
-        SELECT
-            b.*
-        FROM
-            role_menu AS a
-        LEFT JOIN menu AS b ON a.menu_id = b.id
-        where role_id = #{roleId}
+    <select id="tologin" resultType="com.rich.pojo.User">
+        select * from login_user where login_name=#{username} and login_password=#{password} and status = 1
     </select>
 
     <insert id="saveSystemUser">
-        insert into system_user (user_name,password,email,phone,role_id,create_time,update_time,status)
-        values (#{userName},#{password},#{email},#{phone},#{roleId},#{createTime},#{updateTime},#{status})
+        insert into login_user (login_name,login_password,user_email,user_phone,role_id,create_time,update_time,status)
+        values (#{loginName},#{loginPassword},#{userEmail},#{userPhone},#{roleId},#{createTime},#{updateTime},#{status})
     </insert>
 
     <update id="updateSystemUser">
-        update system_user set user_name=#{userName},password=#{password},email=#{email},phone=#{phone},role_id=#{roleId} where id = #{id}
+        update login_user set login_name=#{loginName},login_password=#{loginPassword},user_email=#{userEmail},user_phone=#{userPhone},role_id=#{roleId} where id = #{id}
     </update>
 
-    <select id="selectSystemUserList" resultType="com.rich.pojo.SystemUser">
-        select * from system_user
+    <select id="selectSystemUserList" resultType="com.rich.pojo.User">
+        select * from login_user where status = #{status}
     </select>
     <delete id="deleteUser">
-        delete from system_user where id = #{userId}
+        delete from login_user where id = #{userId}
     </delete>
+    <select id="getOneUser" resultType="com.rich.pojo.User">
+        select * from login_user where id = #{userId}
+    </select>
 </mapper>

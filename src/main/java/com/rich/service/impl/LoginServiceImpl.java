@@ -24,17 +24,17 @@ public class LoginServiceImpl implements LoginService {
 
     /***
      * 查询用户是否存在
-     * @param systemUser
+     * @param user
      * @return
      */
     @Override
-    public int selectUserCount(SystemUser systemUser) {
-        return loginMapper.selectUserCount(systemUser);
+    public int selectUserCount(User user) {
+        return loginMapper.selectUserCount(user);
     }
 
     @Override
-    public SystemUser selectUserInfo(SystemUser systemUser) {
-        return loginMapper.selectUserInfo(systemUser);
+    public User selectUserInfo(User user) {
+        return loginMapper.selectUserInfo(user);
     }
 
     /***
@@ -61,15 +61,16 @@ public class LoginServiceImpl implements LoginService {
 
     /***
      * 新增用户
-     * @param systemUser
+     * @param user
      * @return
      */
     @Override
-    public int insertUserInfo(SystemUser systemUser) {
+    public int insertUserInfo(User user) {
         Date date = new Date();
-        systemUser.setCreateTime(date);
-        systemUser.setUpdateTime(date);
-        return loginMapper.insertUserInfo(systemUser);
+        user.setCreateTime(date);
+        user.setUpdateTime(date);
+        user.setRoleId(3);
+        return loginMapper.insertUserInfo(user);
     }
 
     @Override
@@ -120,22 +121,22 @@ public class LoginServiceImpl implements LoginService {
 
     /***
      * 修改个人信息
-     * @param systemUser
+     * @param user
      * @return
      */
     @Override
-    public int updateInfo(SystemUser systemUser) {
-        return loginMapper.updateMyself(systemUser);
+    public int updateInfo(User user) {
+        return loginMapper.updateMyself(user);
     }
 
     /***
      * 修改密码信息
-     * @param systemUser
+     * @param user
      * @return
      */
     @Override
-    public int updatePasswordInfo(SystemUser systemUser) {
-        return loginMapper.updatePasswordInfo(systemUser);
+    public int updatePasswordInfo(User user) {
+        return loginMapper.updatePasswordInfo(user);
     }
 
     /***
@@ -243,10 +244,10 @@ public class LoginServiceImpl implements LoginService {
     @Override
     public int settleOrderInfo(OrderInfo orderInfo, HttpServletRequest request) {
         String code = "YU" + format.format(new Date()) + "" + String.valueOf(Math.random()).substring(2, 5);
-        SystemUser systemUser = (SystemUser) request.getSession().getAttribute("user");
+        User user = (User) request.getSession().getAttribute("user");
         BuyCar buyCar = new BuyCar();
         int i = 0;
-        buyCar.setUserId(systemUser.getId());
+        buyCar.setUserId(user.getId());
         List<GoodsCarInfo> list = loginMapper.selectGoodsCarInfo(buyCar);
         if(list.size() > 0){
             orderInfo.setOrderStatus(1);

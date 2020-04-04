@@ -76,12 +76,12 @@ public class BeforeController {
      */
     @RequestMapping("settle")
     public String settle(OrderInfo orderInfo, Model model,HttpServletRequest request) {
-        SystemUser systemUser = (SystemUser) request.getSession().getAttribute("user");
-        orderInfo.setUserId(systemUser.getId());
+        User user = (User) request.getSession().getAttribute("user");
+        orderInfo.setUserId(user.getId());
         int i = loginService.settleOrderInfo(orderInfo,request);
         //查询订单列表信息
         BuyCar record = new BuyCar();
-        record.setUserId(systemUser.getId());
+        record.setUserId(user.getId());
         List<OrderInfoVO> list = loginService.selectOrderInfo(record);
         //计算购物车总金额
         model.addAttribute("list",list);
@@ -166,10 +166,10 @@ public class BeforeController {
      */
     @RequestMapping("deleteBuyCar")
     public String deleteBuyCar(int id, Model model,HttpServletRequest request) {
-        SystemUser systemUser = (SystemUser) request.getSession().getAttribute("user");
+        User user = (User) request.getSession().getAttribute("user");
         loginService.deleteGoodsCar(id);
         BuyCar buyCar =new BuyCar();
-        buyCar.setUserId(systemUser.getId());
+        buyCar.setUserId(user.getId());
         //查询购物车列表信息
         List<GoodsCarInfo> list = loginService.selectGoodsCarInfo(buyCar);
         //计算购物车总金额
@@ -181,15 +181,15 @@ public class BeforeController {
 
     /***
      * 注册验证用户名是否已被注册
-     * @param systemUser
+     * @param user
      * @return
      */
     @RequestMapping("user/registerVerify")
     @ResponseBody
-    public Map selectAll(SystemUser systemUser) {
+    public Map selectAll(User user) {
         //初始化map
         HashMap map = new HashMap();
-        int count = loginService.selectUserCount(systemUser);
+        int count = loginService.selectUserCount(user);
         if (count == 1) {
             map.put("flag", 1);
         } else {
@@ -200,12 +200,12 @@ public class BeforeController {
 
     /***
      * 注册
-     * @param systemUser
+     * @param user
      * @return
      */
     @RequestMapping("user/register")
-    public String selectAll(Model model,SystemUser systemUser) {
-        loginService.insertUserInfo(systemUser);
+    public String selectAll(Model model, User user) {
+        loginService.insertUserInfo(user);
         return "pages/before/login";
     }
 
@@ -217,8 +217,8 @@ public class BeforeController {
     @RequestMapping("insertEvaluate")
     @ResponseBody
     public Map insertEvaluate(EvaluateInner evaluateInner,HttpServletRequest request) {
-        SystemUser systemUser = (SystemUser) request.getSession().getAttribute("user");
-        evaluateInner.setUserId(systemUser.getId());
+        User user = (User) request.getSession().getAttribute("user");
+        evaluateInner.setUserId(user.getId());
         HashMap map = new HashMap();
         int i = loginService.insertEvaluate(evaluateInner);
         map.put("flag",i);
@@ -233,8 +233,8 @@ public class BeforeController {
     @RequestMapping("insertAddress")
     @ResponseBody
     public Map insertAddress(@RequestBody AddressInfo addressInfo,HttpServletRequest request) {
-        SystemUser systemUser = (SystemUser) request.getSession().getAttribute("user");
-        addressInfo.setUserId(systemUser.getId());
+        User user = (User) request.getSession().getAttribute("user");
+        addressInfo.setUserId(user.getId());
         HashMap map = new HashMap();
         int i = loginService.insertAddressInfo(addressInfo);
         map.put("flag",i);
@@ -249,8 +249,8 @@ public class BeforeController {
     @RequestMapping("updateAddress")
     @ResponseBody
     public Map updateAddress(@RequestBody AddressInfo addressInfo,HttpServletRequest request) {
-        SystemUser systemUser = (SystemUser) request.getSession().getAttribute("user");
-        addressInfo.setUserId(systemUser.getId());
+        User user = (User) request.getSession().getAttribute("user");
+        addressInfo.setUserId(user.getId());
         HashMap map = new HashMap();
         int i = loginService.updateAddressInfo(addressInfo);
         map.put("flag",i);
@@ -278,9 +278,9 @@ public class BeforeController {
     @RequestMapping("selectListAddress")
     @ResponseBody
     public Map selectListAddress(HttpServletRequest request) {
-        SystemUser systemUser = (SystemUser) request.getSession().getAttribute("user");
+        User user = (User) request.getSession().getAttribute("user");
         HashMap map = new HashMap();
-        List<AddressInfo> list = loginService.selectListAddressInfo(systemUser.getId());
+        List<AddressInfo> list = loginService.selectListAddressInfo(user.getId());
         map.put("data",list);
         return map;
     }
@@ -299,24 +299,24 @@ public class BeforeController {
 
     /***
      * 修改个人信息
-     * @param systemUser
+     * @param user
      * @return
      */
     @RequestMapping("updateMyselfInfo")
-    public String updateMyselfInfo(SystemUser systemUser,HttpServletRequest request) {
-        loginService.updateInfo(systemUser);
+    public String updateMyselfInfo(User user, HttpServletRequest request) {
+        loginService.updateInfo(user);
         request.getSession().removeAttribute("user");
         return "pages/before/login";
     }
 
     /***
      * 修改密码
-     * @param systemUser
+     * @param user
      * @return
      */
     @RequestMapping("updatePasswordInfo")
-    public String updatePasswordInfo(SystemUser systemUser) {
-        loginService.updatePasswordInfo(systemUser);
+    public String updatePasswordInfo(User user) {
+        loginService.updatePasswordInfo(user);
         return "pages/before/login";
     }
 
@@ -338,11 +338,11 @@ public class BeforeController {
      */
     @RequestMapping("user/login")
     @ResponseBody
-    public Map login(SystemUser systemUser, HttpServletRequest request) {
+    public Map login(User systemUser, HttpServletRequest request) {
         //初始化map
         HashMap map = new HashMap();
         map.put("flag", 0);
-        SystemUser user = loginService.selectUserInfo(systemUser);
+        User user = loginService.selectUserInfo(systemUser);
         if (null == user) {
             map.put("flag", 1);
             map.put("msg","用户不存在");

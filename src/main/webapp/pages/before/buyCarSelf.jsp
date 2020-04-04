@@ -1,5 +1,5 @@
 <%@ page import="java.math.BigDecimal" %>
-<%@ page import="com.rich.pojo.SystemUser" %>
+<%@ page import="com.rich.pojo.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -57,7 +57,7 @@
 
 </head>
 <%
-    SystemUser user= (SystemUser) request.getSession().getAttribute("user");
+    User user= (User) request.getSession().getAttribute("user");
     int userId = 0;
     if(null != user){
         userId = user.getId();

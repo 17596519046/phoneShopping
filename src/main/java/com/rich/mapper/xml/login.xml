@@ -23,7 +23,7 @@
         where goods_id = #{goodsId}
     </select>
 
-    <select id="selectUserInfo" resultType="com.rich.pojo.SystemUser">
+    <select id="selectUserInfo" resultType="com.rich.pojo.User">
         select * from login_user
         where login_name = #{loginName}
     </select>
