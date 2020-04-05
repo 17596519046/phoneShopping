@@ -10,10 +10,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
-    String name = request.getParameter("name");
-    String detail = request.getParameter("detail");
-    String img = request.getParameter("img");
-    String price = request.getParameter("price");
+    String productName = request.getParameter("productName");
+    String productDetail = request.getParameter("productDetail");
+    String productImg = request.getParameter("productImg");
+    String productNum = request.getParameter("productNum");
+    String productPrice = request.getParameter("productPrice");
     String id = request.getParameter("id");
     SystemUser user = (SystemUser) request.getSession().getAttribute("user");
     int userId = 0;
@@ -24,12 +25,12 @@
 <html>
 <head>
     <meta charset="utf8" version="1">
-    <title>豫予-正品低价、品质保障、配送及时、轻松购物！</title>
+    <title>脑桥-正品低价、品质保障、配送及时、轻松购物！</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <meta name="description"
           content="京东JD.COM-专业的综合网上购物商城,销售家电、数码通讯、电脑、家居百货、服装服饰、母婴、图书、食品等数万个品牌优质商品.便捷、诚信的服务，为您提供愉悦的网上购物体验!">
     <meta name="Keywords" content="网上购物,网上商城,手机,笔记本,电脑,MP3,CD,VCD,DV,相机,数码,配件,手表,存储卡,京东">
-    <link rel="icon" href="//www.jd.com/favicon.ico" mce_href="//www.jd.com/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="" mce_href="//www.jd.com/favicon.ico" type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
 
@@ -68,7 +69,7 @@
 <script>
     function search() {
         var key = $("#key").val();
-        window.location.href = '/before/main?name=' + key;
+        window.location.href = '/before/main?productName=' + key;
     }
 
     function mySelf() {
@@ -103,97 +104,97 @@
 </div>
 <div id="shortcut">
     <div class="w">
-        <ul class="fl" clstag="h|keycount|head|topbar_01">
-            <li class="shortcut_btn dropdown" id="ttbar-mycity"><a href="javascript:void(0);" id="areamini"
-                                                                   class="dt cw-icon ui-areamini-text-wrap" style=""
-                                                                   aria-haspopup="true" aria-label="地区" role="button"><i
-                    class="iconfont iconfont-location"></i><span class="ui-areamini-text" data-id="7"
-                                                                  title="河南">${area}</span></a>
-                <div class="dd dropdown-layer" tabindex="-1" area-labelledby="areamini" role="menu">
-                    <div class="dd-spacer"></div>
-                    <div class="ui-areamini-content-wrap" style="left: auto;">
-                        <div class="ui-areamini-content">
-                            <div class="ui-areamini-content-list">
-                                <c:forEach var="vo" items="${areaList}" varStatus="i">
-                                    <div class="item"><a data-id="1" href="javascript:void(0)" role="menuitem"
-                                                         onclick="clickArea('${vo.area}')"
-                                                         class="${vo.area eq area ?'selected':''}"
-                                                         tabindex="-1">${vo.area}</a></div>
-                                </c:forEach>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <ul class="fr">
-            <li class="fore1 dropdown" id="ttbar-login" clstag="h|keycount|head|topbar_02">
-                <c:choose>
-                    <c:when test="${user.userName eq null}">
-                        <a href="/pages/before/login.jsp" class="link-login">你好，请登录</a>
-                        &nbsp;&nbsp;<a
-                        href="/pages/before/register.jsp" class="link-regist style-red">免费注册</a>
-                    </c:when>
-                    <c:otherwise>
-                        <a href="#" class="link-login">${user.userName}</a>
-                        &nbsp;&nbsp; <a href="#" onclick="myselfOrder()" class="link-login">我的订单</a>
-                        &nbsp;&nbsp; <a href="/pages/before/myselfAddress.jsp" class="link-login">收货地址</a>
-                    </c:otherwise>
-                </c:choose>
-            </li>
-        </ul>
+        <%--<ul class="fl" clstag="h|keycount|head|topbar_01">--%>
+            <%--<li class="shortcut_btn dropdown" id="ttbar-mycity"><a href="javascript:void(0);" id="areamini"--%>
+                                                                   <%--class="dt cw-icon ui-areamini-text-wrap" style=""--%>
+                                                                   <%--aria-haspopup="true" aria-label="地区" role="button"><i--%>
+                    <%--class="iconfont iconfont-location"></i><span class="ui-areamini-text" data-id="7"--%>
+                                                                  <%--title="河南">${area}</span></a>--%>
+                <%--<div class="dd dropdown-layer" tabindex="-1" area-labelledby="areamini" role="menu">--%>
+                    <%--<div class="dd-spacer"></div>--%>
+                    <%--<div class="ui-areamini-content-wrap" style="left: auto;">--%>
+                        <%--<div class="ui-areamini-content">--%>
+                            <%--<div class="ui-areamini-content-list">--%>
+                                <%--<c:forEach var="vo" items="${areaList}" varStatus="i">--%>
+                                    <%--<div class="item"><a data-id="1" href="javascript:void(0)" role="menuitem"--%>
+                                                         <%--onclick="clickArea('${vo.area}')"--%>
+                                                         <%--class="${vo.area eq area ?'selected':''}"--%>
+                                                         <%--tabindex="-1">${vo.area}</a></div>--%>
+                                <%--</c:forEach>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</li>--%>
+        <%--</ul>--%>
+        <%--<ul class="fr">--%>
+            <%--<li class="fore1 dropdown" id="ttbar-login" clstag="h|keycount|head|topbar_02">--%>
+                <%--<c:choose>--%>
+                    <%--<c:when test="${user.userName eq null}">--%>
+                        <%--<a href="/pages/before/login.jsp" class="link-login">你好，请登录</a>--%>
+                        <%--&nbsp;&nbsp;<a--%>
+                        <%--href="/pages/before/register.jsp" class="link-regist style-red">免费注册</a>--%>
+                    <%--</c:when>--%>
+                    <%--<c:otherwise>--%>
+                        <%--<a href="#" class="link-login">${user.userName}</a>--%>
+                        <%--&nbsp;&nbsp; <a href="#" onclick="myselfOrder()" class="link-login">我的订单</a>--%>
+                        <%--&nbsp;&nbsp; <a href="/pages/before/myselfAddress.jsp" class="link-login">收货地址</a>--%>
+                    <%--</c:otherwise>--%>
+                <%--</c:choose>--%>
+            <%--</li>--%>
+        <%--</ul>--%>
     </div>
 </div>
-<div id="header">
-    <div class="w">
-        <div id="logo" class="logo">
-            <h1 class="logo_tit">
-                <a href="#"
-                   style="background-image: url('/img/image/yu.jpg');background-size: cover;background-position: 0px -35px"
-                   class="logo_tit_lk" clstag="h|keycount|head|logo_01">京东</a>
-                <%--<a href="#" class="logo_tit_lk" clstag="h|keycount|head|logo_01">京东</a>--%>
-            </h1>
-            <h2 class="logo_subtit">京东,多快好省</h2>
-            <div class="logo_extend" clstag="h|keycount|head|logo_02"></div>
-        </div>
+<%--<div id="header">--%>
+    <%--<div class="w">--%>
+        <%--<div id="logo" class="logo">--%>
+            <%--<h1 class="logo_tit">--%>
+                <%--<a href="#"--%>
+                   <%--style="background-image: url('/img/image/yu.jpg');background-size: cover;background-position: 0px -35px"--%>
+                   <%--class="logo_tit_lk" clstag="h|keycount|head|logo_01">京东</a>--%>
+                <%--&lt;%&ndash;<a href="#" class="logo_tit_lk" clstag="h|keycount|head|logo_01">京东</a>&ndash;%&gt;--%>
+            <%--</h1>--%>
+            <%--<h2 class="logo_subtit">京东,多快好省</h2>--%>
+            <%--<div class="logo_extend" clstag="h|keycount|head|logo_02"></div>--%>
+        <%--</div>--%>
 
-        <div id="search">
-            <div class="search-m">
-                <div class="form" role="serachbox">
-                    <%--<ul id="shelper" class="search-helper" style="display: none"></ul>--%>
-                    <input clstag="h|keycount|head|search_c" type="text"
-                           onkeydown="javascript:if(event.keyCode==13) search('key');" autocomplete="off" id="key"
-                           accesskey="s" value="${name}"
-                           style="width: 100%;height: 100%;background-color: white"
-                           class="text"
-                           aria-label="搜索"/>
-                    <button clstag="h|keycount|head|search_a" onclick="search('key');return false;" class="button"
-                            aria-label="搜索">
-                        <i
-                                class="iconfont">&#xe60b;</i></button>
-                </div>
+        <%--<div id="search">--%>
+            <%--<div class="search-m">--%>
+                <%--<div class="form" role="serachbox">--%>
+                    <%--&lt;%&ndash;<ul id="shelper" class="search-helper" style="display: none"></ul>&ndash;%&gt;--%>
+                    <%--<input clstag="h|keycount|head|search_c" type="text"--%>
+                           <%--onkeydown="javascript:if(event.keyCode==13) search('key');" autocomplete="off" id="key"--%>
+                           <%--accesskey="s" value="${name}"--%>
+                           <%--style="width: 100%;height: 100%;background-color: white"--%>
+                           <%--class="text"--%>
+                           <%--aria-label="搜索"/>--%>
+                    <%--<button clstag="h|keycount|head|search_a" onclick="search('key');return false;" class="button"--%>
+                            <%--aria-label="搜索">--%>
+                        <%--<i--%>
+                                <%--class="iconfont">&#xe60b;</i></button>--%>
+                <%--</div>--%>
 
-                <div id="settleup" class="dropdown" clstag="h|keycount|head|cart_null">
-                    <div class="cw-icon">
-                        <i class="iconfont">&#xe60c;</i>
-                        <a href="#" onclick="mySelf()">我的购物车</a>
-                        <%--<a target="_blank" href="#">我的购物车</a>--%>
-                        <i class="ci-count" id="shopping-amount"></i>
-                    </div>
-                    <div class="dropdown-layer">
-                        <div id="J_cart_pop">
-                            <div class="cart_empty">
-                                <i class="cart_empty_img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                <%--<div id="settleup" class="dropdown" clstag="h|keycount|head|cart_null">--%>
+                    <%--<div class="cw-icon">--%>
+                        <%--<i class="iconfont">&#xe60c;</i>--%>
+                        <%--<a href="#" onclick="mySelf()">我的购物车</a>--%>
+                        <%--&lt;%&ndash;<a target="_blank" href="#">我的购物车</a>&ndash;%&gt;--%>
+                        <%--<i class="ci-count" id="shopping-amount"></i>--%>
+                    <%--</div>--%>
+                    <%--<div class="dropdown-layer">--%>
+                        <%--<div id="J_cart_pop">--%>
+                            <%--<div class="cart_empty">--%>
+                                <%--<i class="cart_empty_img"></i>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+        <%--</div>--%>
 
-        <div id="hotwords" clstag="h|keycount|head|search_d" role=""></div>
-    </div>
-</div>
+        <%--<div id="hotwords" clstag="h|keycount|head|search_d" role=""></div>--%>
+    <%--</div>--%>
+<%--</div>--%>
 <div class="w">
     <div class="product-intro clearfix">
         <div class="preview-wrap">
@@ -207,7 +208,7 @@
                     <img id="spec-img"
                     <%--data-origin="//img14.360buyimg.com/n1/jfs/t18325/65/199693094/405715/6f845190/5a61d111N0e4f0567.jpg"--%>
                     <%--alt="卡罗莱（CALUOLA）全自动机械表男士手表运动男表防水多功能时尚学生真皮带精钢带夜光腕表 全黑钢带 CA1069【爆款有夜光】"--%>
-                         src="<%=img%>"
+                         src="<%=productImg%>"
                          width="350">
                     <%--<i></i>--%>
                     <div id="belt"></div>
@@ -243,16 +244,17 @@
         <div class="itemInfo-wrap">
             <input id="goodsId" type="hidden" value="<%=id%>">
             <input id="userId" type="hidden" value="<%=userId%>">
+            <input id="goodsNum" type="hidden" value="<%=productNum%>">
             <div class="sku-name">
-                <%=name%>
+                <%=productName%>
             </div>
             <div class="summary summary-first">
                 <div class="summary-price-wrap">
                     <div class="summary-price J-summary-price">
-                        <div class="dt">豫 予 价</div>
+                        <div class="dt">商 品 价</div>
                         <div class="dd">
                             <span class="p-price"><span>￥</span><span
-                                    class="price J-p-1048468099"><%=price%></span></span><span
+                                    class="price J-p-1048468099"><%=productPrice%></span></span><span
                                 class="pricing">
                             <%--[<del id="page_hx_price">￥2388.00</del>]--%>
                         </span>
@@ -345,6 +347,11 @@
 
                             function add() {
                                 var number = $("#buy-num").val();
+                                var goodsNum = $("#goodsNum").val();
+                                if(number >= goodsNum){
+                                    alert('该商品库存不足');
+                                    return false
+                                }
                                 var num = parseInt(number) + parseInt(1);
                                 $("#buy-num").val(num);
                             }
@@ -362,7 +369,11 @@
                 </div>
                 <div id="choose-btns" class="choose-btns clearfix">
                     <font style="font-weight: bold;font-size: 15px;font-family: 'Arial Black'">商品详情：</font>
-                    <span style="font-weight: bold;font-size: 15px;font-family: 'Arial Black'"><%=detail%></span>
+                    <span style="font-weight: bold;font-size: 15px;font-family: 'Arial Black'"><%=productDetail%></span>
+                </div>
+                <div id="choose-btns" class="choose-btns clearfix">
+                    <font style="font-weight: bold;font-size: 15px;font-family: 'Arial Black'">库存数量：</font>
+                    <span style="font-weight: bold;font-size: 15px;font-family: 'Arial Black'"><%=productNum%></span>
                 </div>
                 <div id="summary-tips" class="summary-tips" clstag="shangpin|keycount|product|wenxintishi_2" style="">
                     <div class="dt">温馨提示</div>
@@ -376,26 +387,26 @@
         </div>
     </div>
 </div>
-<div class="m m-content comment" id="comment">
-    <div class="mt"><h3>商品评价</h3></div>
-    <c:forEach var="po" items="${list}" varStatus="i">
-    <div class="mt">
-        <div class="comment-item" data-guid="c8d19254-49a4-46f6-8a09-8e3695f50c20" data-top="">
-            <div class="user-column">
-                <div class="user-info"><img src="//misc.360buyimg.com/user/myjd-2015/css/i/peisong.jpg" alt="jd_933397364"
-                                            class="avatar" width="25" height="25">${po.userName}
-                </div>
-                <div class="user-level"><span style="color: rgb(136, 136, 136);"></span></div>
-            </div>
-            <div class="comment-column J-comment-column">
-                <div class="comment-star star5"></div>
-                <p class="comment-con" style="margin-left: 200px;">${po.innerRemark}
-                    </p>
-            </div>
-        </div>
-    </div>
-    </c:forEach>
-</div>
+<%--<div class="m m-content comment" id="comment">--%>
+    <%--<div class="mt"><h3>商品评价</h3></div>--%>
+    <%--<c:forEach var="po" items="${list}" varStatus="i">--%>
+    <%--<div class="mt">--%>
+        <%--<div class="comment-item" data-guid="c8d19254-49a4-46f6-8a09-8e3695f50c20" data-top="">--%>
+            <%--<div class="user-column">--%>
+                <%--<div class="user-info"><img src="//misc.360buyimg.com/user/myjd-2015/css/i/peisong.jpg" alt="jd_933397364"--%>
+                                            <%--class="avatar" width="25" height="25">${po.userName}--%>
+                <%--</div>--%>
+                <%--<div class="user-level"><span style="color: rgb(136, 136, 136);"></span></div>--%>
+            <%--</div>--%>
+            <%--<div class="comment-column J-comment-column">--%>
+                <%--<div class="comment-star star5"></div>--%>
+                <%--<p class="comment-con" style="margin-left: 200px;">${po.innerRemark}--%>
+                    <%--</p>--%>
+            <%--</div>--%>
+        <%--</div>--%>
+    <%--</div>--%>
+    <%--</c:forEach>--%>
+<%--</div>--%>
 <div id="J_footer" class="footer">
     <div class="mod_service" clstag="h|keycount|btm|btmnavi_null01">
         <div class="grid_c1 mod_service_inner">
@@ -444,7 +455,7 @@
         if (userId == 0) {
             window.location.href = "/pages/before/login.jsp"
         } else {
-            window.location.href = "/before/addBuyCar?goodsId=" + goodsId + "&userId=" + userId + "&num=" + num;
+            window.location.href = "/before/user/addBuyCar?productId=" + goodsId + "&userId=" + userId + "&buyNum=" + num;
         }
     }
 </script>
