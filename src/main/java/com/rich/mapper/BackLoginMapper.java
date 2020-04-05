@@ -1,6 +1,7 @@
 package com.rich.mapper;
 
-import com.rich.pojo.SystemUser;
+import com.rich.pojo.User;
+import com.rich.pojo.User;
 import com.rich.vo.MenuInfo;
 import org.apache.ibatis.annotations.Param;
 
@@ -10,40 +11,35 @@ import java.util.List;
 public interface BackLoginMapper {
     /**
      * 登录
-     * @param systemUser
      * @return
      */
-    SystemUser selectAccountPassword(SystemUser systemUser);
-
-    /**
-     * 根据角色id获取对应所有的菜单id
-     * @param roleId 角色id
-     */
-    List<MenuInfo> selectRoleMenuList(Integer roleId);
+    User tologin(@Param("username") String username, @Param("password") String password);
 
     /**
      * 添加后台用户信息
-     * @param systemUser
+     * @param user
      * @return
      */
-    boolean saveSystemUser(SystemUser systemUser);
+    boolean saveSystemUser(User user);
 
     /**
      * 修改后台用户信息
-     * @param systemUser
+     * @param user
      * @return
      */
-    boolean updateSystemUser(SystemUser systemUser);
+    boolean updateSystemUser(User user);
 
     /**
      * 查询所有用户信息
      * @return
      */
-    List<SystemUser> selectSystemUserList();
+    List<User> selectSystemUserList(int status);
 
     /**
      * 删除用户
      * @param userId
      */
     void deleteUser(Integer userId);
+
+    User getOneUser(Integer userId);
 }

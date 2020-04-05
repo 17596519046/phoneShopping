@@ -28,41 +28,35 @@
 
 <body>
 <div>
-    <c:if test="${all.get(0).status == 1 && systemUser.roleId == 1}">
-        <a class="btn btn-default" href="../../pages/back/user-update.jsp" role="button">添加管理员</a>
-    </c:if>
+    <%--<a class="btn btn-default" href="../../pages/back/user-update.jsp" role="button">添加分类</a>--%>
     <table class="table table-bordered">
         <tr>
-            <td>姓名</td>
-            <td>密码</td>
-            <td>邮箱</td>
-            <td>手机</td>
+            <td>分类名</td>
             <td>创建时间</td>
-            <td>角色</td>
-            <c:if test="${systemUser.roleId == 1}">
-                <td>操作</td>
-            </c:if>
+            <td>操作</td>
         </tr>
 
         <c:forEach items="${all }" var="all">
 
             <tr>
-                <td>${all.loginName}</td>
-                <td>${all.loginPassword}</td>
-                <td>${all.userEmail}</td>
-                <td>${all.userPhone}</td>
-                <td>${all.cretatDate}</td>
-                <td>${all.roleName}</td>
-
-                <c:if test="${systemUser.roleId == 1}">
-                    <td>
-                        <a href="/back/getOneUser?userId=${all.id }">修改</a>
-                        <a href="/back/deleteUser?userId=${all.id }">删除</a>
-                    </td>
-                </c:if>
+                <td>${all.name}</td>
+                <td>${all.createDate}</td>
+                <td>
+                    <a href="/product/getOneProduct?id=${all.id }">修改</a>
+                    <a href="/product/deleteProduct?id=${all.id }">删除</a>
+                </td>
             </tr>
 
         </c:forEach>
+
+        <tr>
+            <form class="form-horizontal" action="/product/addProduct">
+                <input type="hidden" name="id" class="form-control" id="id" placeholder="分类名称" value="${productType.id}">
+                <td><input type="text" name="name" class="form-control" id="name" placeholder="分类名称" value="${productType.name}"></td>
+                <td>${productType.createDate}</td>
+                <td><button type="submit" class="btn btn-default">提交</button></td>
+            </form>
+        </tr>
 
 </table>
 

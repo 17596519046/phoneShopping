@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rich.mapper.ProductMapper">
+
+    <select id="getAllProduct" resultType="com.rich.pojo.ProductType">
+        select id,name,create_time as createTime
+        from product_type;
+    </select>
+    <select id="getOneProduct" resultType="com.rich.pojo.ProductType">
+        select *
+        from product_type where id = #{id};
+    </select>
+
+    <insert id="addProduct">
+        insert into product_type (name,create_time) values (#{name},now())
+    </insert>
+
+    <delete id="deleteProduct">
+        delete from product_type where id = #{id}
+    </delete>
+
+    <update id="updateProduct">
+        update product_type
+        set name = #{name}
+        where id = #{id};
+    </update>
+
+</mapper>
