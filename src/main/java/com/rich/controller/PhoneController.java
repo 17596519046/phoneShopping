@@ -18,7 +18,7 @@ public class PhoneController {
     private ProductTypeService productTypeService;
 
     /***
-     * 查看订单
+     * 查看所有手机
      * @return
      */
     @RequestMapping("/phone")

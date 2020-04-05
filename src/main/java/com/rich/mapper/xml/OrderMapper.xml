@@ -3,4 +3,32 @@
 <mapper namespace="com.rich.mapper.OrderMapper">
 
 
+    <select id="selectAllOrder" resultType="com.rich.pojo.OrderInfo">
+        SELECT
+            oi.id as id,
+            lu.login_name as userName,
+            lu.user_phone as userPhone,
+            gc.buy_num as num,
+            oi.orderCode as orderCode,
+            oi.orderStatus as orderStatus,
+            oi.price as price,
+            CONCAT(ai.province,' ',ai.city,' ',ai.area,' ',ai.detailsAddress,' ',ai.createAddressLabel) as address,
+            gc.create_time as createTime,
+            p.product_name as productname
+        FROM
+            goods_car gc
+                LEFT JOIN order_info oi ON gc.order_id = oi.id
+                LEFT JOIN product p ON gc.product_id = p.id
+                LEFT JOIN address_info ai ON oi.address_info_id = ai.id
+                LEFT JOIN login_user lu ON gc.user_id = lu.id
+    </select>
+
+    <update id="updateOrder">
+        update order_info set orderStatus = #{status} where id = #{id}
+    </update>
+
+    <delete id="deleteOrder">
+        delete from order_info where id = #{id}
+    </delete>
+
 </mapper>

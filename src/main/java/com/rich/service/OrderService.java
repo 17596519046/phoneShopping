@@ -14,6 +14,9 @@ import java.util.List;
  */
 public interface OrderService {
 
-    List<OrderInfo> selectAllOrder();
+    List<OrderInfo> selectAllOrder(String orderName);
 
+    void updateOrder(int status, int id);
+
+    void deleteOrder(int id);
 }

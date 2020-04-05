@@ -28,34 +28,37 @@
 
 <body>
 <div>
-    <a class="btn btn-default" href="/phone/toAddPhone" role="button">添加手机</a>
-    <form class="form-horizontal" action="/phone/phone">
-        <input type="text" name="phoneName" class="form-control" id="phoneName" placeholder="" value="输入搜索的手机名称">
-        <button class="btn btn-default" type="submit">搜索</button>
-    </form>
     <table class="table table-bordered">
         <tr>
-            <td width="7%">手机</td>
-            <td width="7%">价格</td>
-            <td width="50%">详情</td>
-            <td width="7%">品牌</td>
-            <td width="7%">库存</td>
-            <td width="13%">时间</td>
+            <td width="7%">订单号</td>
+            <td width="7%">姓名</td>
+            <td width="7%">手机号</td>
+            <td width="6%">购买手机</td>
+            <td width="7%">购买数量</td>
+            <td width="7%">订单金额</td>
+            <td width="35%">收货地址</td>
+            <td width="10%">下单时间</td>
+            <td width="7%">订单状态</td>
             <td width="7%">操作</td>
         </tr>
 
         <c:forEach items="${all }" var="all">
 
             <tr>
-                <td>${all.productName}</td>
-                <td>${all.productPrice}</td>
-                <td>${all.productDetail}</td>
-                <td>${all.productType}</td>
-                <td>${all.productNum}</td>
+                <td>${all.orderCode}</td>
+                <td>${all.userName}</td>
+                <td>${all.userPhone}</td>
+                <td>${all.productname}</td>
+                <td>${all.num}</td>
+                <td>${all.price}</td>
+                <td>${all.address}</td>
                 <td>${all.createTime}</td>
+                <td>${all.orderStatusStr}</td>
                 <td>
-                    <a href="/phone/getOnePhone?id=${all.id }">修改</a>
-                    <a href="/phone/deletePhone?id=${all.id }">删除</a>
+                    <a href="/order/updateOrder?id=${all.id }&status=4">发货</a>
+                    <c:if test="${systemUser.roleId == 1}">
+                        <a href="/order/deleteOrder?id=${all.id }">删除</a>
+                    </c:if>
                 </td>
             </tr>
 

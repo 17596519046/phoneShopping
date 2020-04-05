@@ -28,7 +28,7 @@
             <a href="/product/product" target="right" class="list-group-item">手机类别管理</a>
             <a href="/back/vip" target="right" class="list-group-item">会员管理</a>
             <a href="/phone/phone" target="right" class="list-group-item">手机管理</a>
-            <a href="/back/order" target="right" class="list-group-item">订单管理</a>
+            <a href="/order/order" target="right" class="list-group-item">订单管理</a>
         </div>
     </div>
     <div class="sidebar py-3" style="width: 79%; float: right">
