@@ -1,5 +1,6 @@
 package com.rich.mapper;
 
+import com.rich.pojo.Phone;
 import com.rich.pojo.ProductType;
 
 import java.util.List;
@@ -34,4 +35,13 @@ public interface ProductMapper {
 
     void updateProduct(ProductType productType);
 
+    List<Phone> getAllPhone(String phoneName);
+
+    Phone getOnePhone(int id);
+
+    void deletePhone(int id);
+
+    void updatePhone(Phone phone);
+
+    void insertPhone(Phone phone);
 }

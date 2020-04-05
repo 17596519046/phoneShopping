@@ -27,7 +27,7 @@
             <a href="/back/user" target="right" class="list-group-item">管理员管理</a>
             <a href="/product/product" target="right" class="list-group-item">手机类别管理</a>
             <a href="/back/vip" target="right" class="list-group-item">会员管理</a>
-            <a href="/back/phone" target="right" class="list-group-item">手机管理</a>
+            <a href="/phone/phone" target="right" class="list-group-item">手机管理</a>
             <a href="/back/order" target="right" class="list-group-item">订单管理</a>
         </div>
     </div>

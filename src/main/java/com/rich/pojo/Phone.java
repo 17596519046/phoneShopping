@@ -5,11 +5,11 @@ import lombok.Data;
 /**
     * goods 实体类
     * 2020-03-12 15:19:09
-   */ 
+   */
 @Data
-public class Goods{
+public class Phone {
 	//id
-	private int	id;
+	private Integer	id;
 
 	private Integer	typeId;
 	/**

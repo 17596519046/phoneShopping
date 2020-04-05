@@ -1,6 +1,7 @@
 package com.rich.service.impl;
 
 import com.rich.mapper.ProductMapper;
+import com.rich.pojo.Phone;
 import com.rich.pojo.ProductType;
 import com.rich.service.ProductTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,5 +64,32 @@ public class ProductTypeServiceImpl implements ProductTypeService {
     @Override
     public void updateProduct(ProductType productType) {
         productMapper.updateProduct(productType);
+    }
+
+    @Override
+    public List<Phone> getAllPhone(String phoneName) {
+        List<Phone> list = productMapper.getAllPhone(phoneName);
+        return list;
+    }
+
+    @Override
+    public Phone getOnePhone(int id) {
+        Phone phone = productMapper.getOnePhone(id);
+        return phone;
+    }
+
+    @Override
+    public void deletePhone(int id) {
+        productMapper.deletePhone(id);
+    }
+
+    @Override
+    public void updatePhone(Phone phone) {
+        productMapper.updatePhone(phone);
+    }
+
+    @Override
+    public void insertPhone(Phone phone) {
+        productMapper.insertPhone(phone);
     }
 }

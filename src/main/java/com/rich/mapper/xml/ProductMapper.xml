@@ -8,15 +8,19 @@
     </select>
     <select id="getOneProduct" resultType="com.rich.pojo.ProductType">
         select *
-        from product_type where id = #{id};
+        from product_type
+        where id = #{id};
     </select>
 
     <insert id="addProduct">
-        insert into product_type (name,create_time) values (#{name},now())
+        insert into product_type (name, create_time)
+        values (#{name}, now())
     </insert>
 
     <delete id="deleteProduct">
-        delete from product_type where id = #{id}
+        delete
+        from product_type
+        where id = #{id}
     </delete>
 
     <update id="updateProduct">
@@ -25,4 +29,52 @@
         where id = #{id};
     </update>
 
+    <select id="getAllPhone" resultType="com.rich.pojo.Phone">
+        SELECT p.id,
+            p.product_name as productName,
+            p.product_price as productPrice,
+            p.product_detail as productDetail,
+            p.product_num as productNum,
+            p.product_img as productImg,
+            p.create_time as createTime,
+            p.update_time as updateTime,
+            p.type_id as typeId,
+            pt.name as productType
+        from product p
+        LEFT  join product_type pt on p.type_id = pt.id
+        where 1=1
+        <if test="phoneName != null and phoneName != ''">
+            and p.product_name like CONCAT('%',#{phoneName},'%')
+        </if>
+    </select>
+    <select id="getOnePhone" resultType="com.rich.pojo.Phone">
+        SELECT id,
+               product_name as productName,
+               product_price as productPrice,
+               product_detail as productDetail,
+               product_num as productNum,
+               product_img as productImg,
+               create_time as createTime,
+               update_time as updateTime,
+               type_id as typeId
+        from product where id = #{id}
+    </select>
+    <delete id="deletePhone">
+        delete from product where id = #{id}
+    </delete>
+    <update id="updatePhone">
+        UPDATE product
+        SET product_name = #{productName},
+            product_price = #{productPrice},
+            product_detail = #{productDetail},
+            product_num = #{productNum},
+            product_img = #{productImg},
+            update_time = now(),
+            type_id = #{typeId}
+        WHERE id = #{id};
+    </update>
+    <insert id="insertPhone">
+        INSERT INTO phone.product(product_name, product_price, product_detail, product_num, product_img, create_time, update_time, type_id)
+        VALUES (#{productName}, #{productPrice}, #{productDetail}, #{productNum}, #{productImg}, now(), null, #{typeId});
+    </insert>
 </mapper>

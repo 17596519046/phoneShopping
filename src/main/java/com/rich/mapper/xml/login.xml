@@ -75,7 +75,7 @@
         where user_name = #{userName} and phone = #{phone}
     </update>
 
-    <select id="selectAllProductInfo" resultType="com.rich.pojo.Goods">
+    <select id="selectAllProductInfo" resultType="com.rich.pojo.Phone">
         select * from product p
         <where>
             <if test="productName != null and productName != ''">
@@ -93,7 +93,7 @@
         where login_name = #{loginName}
     </update>
 
-    <select id="selectProductType" resultType="com.rich.pojo.Goods">
+    <select id="selectProductType" resultType="com.rich.pojo.Phone">
         select pt.name productType,pt.id typeId from product p
         left join product_type pt on pt.id = p.type_id
         group by pt.name,pt.id

@@ -232,7 +232,7 @@
             <%--</div>--%>
             <%--全选--%>
             <%--</div>--%>
-            <div class="column t-goods">商品</div>
+            <div class="column t-phone">商品</div>
             <div class="column t-props"></div>
             <div class="column t-price">单价</div>
             <div class="column t-quantity">数量</div>
@@ -273,8 +273,8 @@
                                 <%--<span class="line-circle"></span>--%>
                                 <%--</div>--%>
                                 <%--</div>--%>
-                                <div class="cell p-goods">
-                                    <div class="goods-item">
+                                <div class="cell p-phone">
+                                    <div class="phone-item">
                                         <div class="p-img">
                                             <a href="#"
                                                <%--target="_blank"--%>

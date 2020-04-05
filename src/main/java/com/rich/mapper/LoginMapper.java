@@ -36,13 +36,13 @@ public interface LoginMapper {
 
     int updatePasswordInfo(User user);
 
-    List<Goods> selectAllProductInfo(Goods goods);
+    List<Phone> selectAllProductInfo(Phone phone);
 
     int updateMyself(User user);
 
     int insertGoodsCar(BuyCar buyCar);
 
-    List<Goods> selectProductType();
+    List<Phone> selectProductType();
 
     List<GoodsCarInfo> selectGoodsCarInfo(BuyCar buyCar);
 

@@ -4,7 +4,6 @@ import com.rich.service.LoginService;
 import com.rich.util.FastDFSClient;
 import com.rich.vo.GoodsCarInfo;
 import com.rich.vo.OrderInfoVO;
-import org.apache.taglibs.standard.lang.jstl.GreaterThanOrEqualsOperator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,13 +32,13 @@ public class BeforeController {
      * @return
      */
     @RequestMapping("main")
-    public String selectAll(Goods goods,Model model) {
-        List<Goods> productList = loginService.selectAllProductInfo(goods);
-        List<Goods> typeList = loginService.selectProductType();
+    public String selectAll(Phone phone, Model model) {
+        List<Phone> productList = loginService.selectAllProductInfo(phone);
+        List<Phone> typeList = loginService.selectProductType();
         model.addAttribute("list",productList);
         model.addAttribute("typeList",typeList);
-        model.addAttribute("name",goods.getProductName());
-        model.addAttribute("typeId",goods.getTypeId());
+        model.addAttribute("name", phone.getProductName());
+        model.addAttribute("typeId", phone.getTypeId());
         return "pages/before/main";
     }
 
@@ -58,13 +57,13 @@ public class BeforeController {
 
     /***
      * 查看商品详情
-     * @param goods
+     * @param phone
      * @param model
      * @return
      */
     @RequestMapping("goodsDetail")
-    public String goodsDetail(Goods goods,Model model) {
-        model.addAttribute("po",goods);
+    public String goodsDetail(Phone phone, Model model) {
+        model.addAttribute("po", phone);
         return "pages/before/productDetails";
     }
 

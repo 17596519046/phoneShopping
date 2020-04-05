@@ -141,12 +141,12 @@ public class LoginServiceImpl implements LoginService {
 
     /***
      * 查询商品详情
-     * @param goods
+     * @param phone
      * @return
      */
     @Override
-    public List<Goods> selectAllProductInfo(Goods goods) {
-        return loginMapper.selectAllProductInfo(goods);
+    public List<Phone> selectAllProductInfo(Phone phone) {
+        return loginMapper.selectAllProductInfo(phone);
     }
 
     /***
@@ -154,7 +154,7 @@ public class LoginServiceImpl implements LoginService {
      * @return
      */
     @Override
-    public List<Goods> selectProductType() {
+    public List<Phone> selectProductType() {
         return loginMapper.selectProductType();
     }
 

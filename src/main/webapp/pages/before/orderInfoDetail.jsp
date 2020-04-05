@@ -202,7 +202,7 @@
 <div id="jd-cart">
     <div class="cart-main cart-main-new">
         <div class="cart-thead">
-            <div class="column t-goods" style="text-align: center">商品</div>
+            <div class="column t-phone" style="text-align: center">商品</div>
             <div class="column t-props"></div>
             <div class="column t-price">单价</div>
             <div class="column t-quantity" style="width: 30%;text-align: center" >数量</div>
@@ -221,8 +221,8 @@
                                  cancelplus="false"
                                  dt="5" shopid="688677">
                                 <div class="item-form">
-                                    <div class="cell p-goods">
-                                        <div class="goods-item">
+                                    <div class="cell p-phone">
+                                        <div class="phone-item">
                                             <div class="p-img">
                                                 <img alt="" width="80" style="height:80px;"
                                                      clstag="clickcart|keycount|xincart|cart_sku_pic"

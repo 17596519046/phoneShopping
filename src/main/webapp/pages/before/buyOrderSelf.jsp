@@ -201,7 +201,7 @@
 <div id="jd-cart">
     <div class="cart-main cart-main-new">
         <div class="cart-thead">
-            <div class="column t-goods"></div>
+            <div class="column t-phone"></div>
             <div class="column t-props" style="margin-left: 5%">订单编号</div>
             <div class="column t-price">金额</div>
             <div class="column t-quantity" style="margin-left: 5%">订单状态</div>
@@ -222,8 +222,8 @@
                                  cancelplus="false"
                                  dt="5" shopid="688677">
                                 <div class="item-form">
-                                    <div class="cell p-goods" style="width: 22%">
-                                        <div class="goods-item">
+                                    <div class="cell p-phone" style="width: 22%">
+                                        <div class="phone-item">
                                             <a href="/before/selectMyselfOrderInfoDetail?orderId=${po.orderId}" style="cursor: pointer;color:#ed3800">${po.orderCode}</a>
                                             <%--<div class="p-img">--%>
                                                 <%----%>

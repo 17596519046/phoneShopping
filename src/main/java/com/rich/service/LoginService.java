@@ -36,9 +36,9 @@ public interface LoginService {
 
     int updatePasswordInfo(User user);
 
-    List<Goods> selectAllProductInfo(Goods goods);
+    List<Phone> selectAllProductInfo(Phone phone);
 
-    List<Goods> selectProductType();
+    List<Phone> selectProductType();
 
     int insertGoodsCar(BuyCar buyCar);
 
