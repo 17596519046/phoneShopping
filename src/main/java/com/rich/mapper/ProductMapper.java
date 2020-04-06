@@ -2,6 +2,7 @@ package com.rich.mapper;
 
 import com.rich.pojo.Phone;
 import com.rich.pojo.ProductType;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -35,7 +36,7 @@ public interface ProductMapper {
 
     void updateProduct(ProductType productType);
 
-    List<Phone> getAllPhone(String phoneName);
+    List<Phone> getAllPhone(@Param("phoneName")String phoneName);
 
     Phone getOnePhone(int id);
 

@@ -3,10 +3,14 @@ package com.rich.controller;
 import com.rich.pojo.Phone;
 import com.rich.pojo.ProductType;
 import com.rich.service.ProductTypeService;
+import com.rich.util.FastDFSClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -75,7 +79,13 @@ public class PhoneController {
      * @return
      */
     @RequestMapping("/insertPhone")
-    public String insertPhone(Model model, Phone phone) {
+    public String insertPhone(MultipartFile file, Phone phone) throws Exception{
+        FastDFSClient fastDFSClient=new FastDFSClient();
+        String url = fastDFSClient.uploadFile(file.getBytes(), "jpg");
+        if(!StringUtils.isEmpty(url)){
+            url = "http://47.101.145.236"+url;
+            phone.setProductImg(url);
+        }
         if (phone.getId() != null && phone.getId() != 0) {
             productTypeService.updatePhone(phone);
         } else {
