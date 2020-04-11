@@ -207,7 +207,6 @@
         <div id="login-banner-wrap" style="width: 100%; background-color: rgb(51, 140, 230);" title="">
             <div class="inner">
                 <img src="https://img.alicdn.com/tps/i4/TB1.tzIbsKfxu4jSZPfSuv3dXXa.jpg" alt="">
-                <a href="https://pages.tmall.com/wow/a/act/tmall/tmc/25715/wupr?pos=1&amp;wh_pid=industry-187291&amp;acm=lb-zebra-153802-761482.1003.2.7557193&amp;scm=1003.2.lb-zebra-153802-761482.ITEM_1586309043537_7557193"></a>
             </div>
         </div>
 

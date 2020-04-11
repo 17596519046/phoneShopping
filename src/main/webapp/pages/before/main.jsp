@@ -320,14 +320,14 @@
                                     <div class="main-banner-con2" style="background-color:#eaebef;">
                                         <a tabindex="-1" class="  j_needGoldExposure " data-exposure=""
                                            data-gold-exposure="" data-spm="d1"
-                                           href="https://tarpa.tmall.com/wow/pegasus/subject/tarpa/kerastase/10795940?pos=1&amp;acm=07055-1.1003.2.7538581&amp;id=10795940&amp;scm=1003.2.07055-1.OTHER_1586818364601_7538581">
+                                           >
                                             <b class="j_bigBanner big-banner " data-src=""
                                                style="background: url(https://img.alicdn.com/imgextra/i1/2528254892/O1CN010abwBX1m0a92ScYBV_!!2528254892.jpg_q100.jpg_.webp) no-repeat center center;"></b>
                                         </a>
 
 
                                         <a tabindex="-1" class="j_smallBanner small-banner0   j_needGoldExposure "
-                                           href="https://tarpa.tmall.com/wow/pegasus/subject/tarpa/kerastase/10795940?pos=5&amp;acm=07055-5.1003.2.7535410&amp;id=10795940&amp;scm=1003.2.07055-5.OTHER_1583321022392_7535410"
+
                                            data-exposure="" data-gold-exposure="">
                                             <img alt=""
                                                  src="https://img.alicdn.com/imgextra/i1/2528254892/O1CN01XI7jWC1m0a918cNwK_!!2528254892.png_240x5000q100.jpg_.webp"
@@ -335,7 +335,7 @@
                                         </a>
 
                                         <a tabindex="-1" class="j_smallBanner small-banner1   j_needGoldExposure "
-                                           href="https://tarpa.tmall.com/wow/pegasus/subject/tarpa/kerastase/10795940?pos=6&amp;acm=07055-6.1003.2.7535412&amp;id=10795940&amp;scm=1003.2.07055-6.OTHER_1584587075329_7535412"
+
                                            data-exposure="" data-gold-exposure="">
                                             <img alt=""
                                                  src="https://img.alicdn.com/imgextra/i1/2528254892/O1CN0150wmbJ1m0a90VmPAB_!!2528254892.png_240x5000q100.jpg_.webp"
@@ -352,7 +352,7 @@
                         <div class="main-banner slider-pannel j_tanxContainer" style="background-color: #8cdbea"
                              style="background: rgb(232, 232, 232) none repeat scroll 0% 0%; position: absolute; z-index: 1; opacity: 1; display: block;">
                             <a data-spm="d2"
-                               href="https://click.mz.simba.taobao.com/ecpm?e=%2FKXVK%2BssFZoPO53EdXrfSxsQmLP5zomMfmLsB8u%2BfE67d6vmLTIKmrYQy8Q68DF8xpdv5eIiPUv%2F6eIJKzWyc2RV5VLNsTWptbR9sxq9q4jPdxtGLmpJMKiTZU1Z7A7u9iFUaGvyKCGT5fzkODgSz1197sOzUjzt4jY1ac3z3kmf52u0Wo2aiuDXFqBoDmUIzJ8JAEqQOp6DZC%2BChAq9%2BrsGAowee1uBFVvp8HVGI8yT6demutggzey5eyAe%2BteIVtmUTY6cl15cF3OW0D2%2FmDmGt8l03BCOube2PENplO3ZdJ3IN5ZJ4x7zpWkNcqZsh2R8Ztq%2BvFkkcuwiSWZrhjYgazJleijOGOr5kURI6p%2Frvm7BYcRKdX3zKpktGTMv8PX%2FtgUPd%2FKRIlyH0EV09BhA0IAqt%2FCUbh0cYc5p3cyOrRdp0leAURmxN6NfOmfM3uPJztm4Ps6VbVQ%2BLUA4RiUX5B937beMmosVl%2BjMfrg%3D&amp;u=https%3A%2F%2Fwww.tmall.com%2Fwow%2Fbrand%2Fact%2Ffashion%3Facm%3Dlb-zebra-2386-265936.1003.4.410386%26scm%3D1003.4.lb-zebra-2386-265936.OTHER_1_410386&amp;k=493">
+                               >
                                 <div class="tanx-banner-con">
                                     <img class="tanx-banner"
                                          src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1585379512532&di=1e03c43f2ba00d4b57219779e2957d5d&imgtype=0&src=http%3A%2F%2Fpic43.nipic.com%2F20140630%2F1756183_104932000000_2.jpg">
@@ -373,7 +373,7 @@
                                     <div class="main-banner-con2" style="background-color:'#e5e5e5';">
                                         <a tabindex="-1" class=" j_needExposure   j_needGoldExposure " data-exposure=""
                                            data-gold-exposure="" data-spm="d3"
-                                           href="https://xiaogouds.tmall.com?pos=1&amp;turing_bucket=9&amp;acm=&amp;scm=1049.lyg_turing_-1_344.142195.142195-THJH_209636&amp;lygClk=1&amp;impid=7l35LYF8gcW">
+
                                             <b class="j_bigBanner big-banner "
                                                data-src="https://img.alicdn.com/tps/i4/TB1I8ZDxeL2gK0jSZFmSuw7iXXa.jpg"
                                                style="background: rgba(0, 0, 0, 0) url(&quot;https://img.alicdn.com/tps/i4/TB1I8ZDxeL2gK0jSZFmSuw7iXXa.jpg&quot;) no-repeat scroll center center;"></b>
@@ -382,7 +382,7 @@
 
                                         <a tabindex="-1"
                                            class="j_smallBanner small-banner0  j_needExposure   j_needGoldExposure "
-                                           href="https://pages.tmall.com/wow/a/act/tmall/tmc/25715/wupr?trackInfo=20160815100201;82014559104;322577;568962415525;3;null;1007.14152.156103.100200300000000;6a79a15e-a18e-407d-8f7b-9d5e853defd5;1;0;10000002;16621728;66049;null_null_0.5_null_false_e:1007.14152.156103.100200300000000;6a79a15e-a18e-407d-8f7b-9d5e853defd5;0&amp;item_id=568962415525&amp;pvid=6a79a15e-a18e-407d-8f7b-9d5e853defd5&amp;pos=8&amp;activity_id=322577&amp;wh_pid=industry-187326&amp;acm=07055.1003.1.2519102&amp;scm=1003.1.20160815.OTHER_0_7532380"
+
                                            data-exposure="" data-gold-exposure="">
                                             <img alt=""
                                                  src="//img.alicdn.com/imgextra/i1/71531/O1CN016OBDjb1NBExzohmOP_!!71531-2-lubanu.png_240x5000q100.jpg_.webp"
@@ -392,7 +392,7 @@
 
                                         <a tabindex="-1"
                                            class="j_smallBanner small-banner1  j_needExposure   j_needGoldExposure "
-                                           href="https://pages.tmall.com/wow/a/act/tmall/dailygroup/1361/wupr?trackInfo=20160815100201;82421787114;323476;565178602824;3;null;1007.14152.156103.100200300000000;6a79a15e-a18e-407d-8f7b-9d5e853defd5;2;0;10000002;15236477;393729;null_null_0.5_null_false_e:1007.14152.156103.100200300000000;6a79a15e-a18e-407d-8f7b-9d5e853defd5;0&amp;item_id=565178602824&amp;pvid=6a79a15e-a18e-407d-8f7b-9d5e853defd5&amp;pos=9&amp;activity_id=323476&amp;wh_pid=daily-189734&amp;acm=07055.1003.1.2519102&amp;scm=1003.1.20160815.OTHER_0_7552901"
+
                                            data-exposure="" data-gold-exposure="">
                                             <img alt=""
                                                  src="//img.alicdn.com/imgextra/i4/1451645/O1CN01zxDToW1O1S7Qp8pab_!!1451645-2-lubanu.png_240x5000q100.jpg_.webp"
@@ -410,7 +410,7 @@
                         <div class="main-banner slider-pannel j_tanxContainer"
                              style="background: rgb(232, 232, 232) none repeat scroll 0% 0%; position: absolute; z-index: 0; opacity: 0; display: none;">
                             <a data-spm="d4"
-                               href="https://click.mz.simba.taobao.com/ecpm?e=e%2FlQO6vScjUPO53EdXrfSxsQmLP5zomMcFqvky%2F0M3eT%2BBah0ctDhYeJtOLFfUxsxpdv5eIiPUt6rGKtMBt8C8R92%2BP%2FC62ktbR9sxq9q4jPdxtGLmpJMKeFzZhjx1TouB4VMot2Z8qNmOOEIouSXIOBnwnLo8Fb0G7opvdXLoaf52u0Wo2aiiEWLN70CJk%2BnTuJ%2BsiI2R7rHgcBQpOPjDIcMP6%2FdKwaU0HrOZqQSwFKtWbhs0%2FiZtW1cLR5yCndXjRJVUfql1iXC5Hm3bekpAMJsVhXUKwz9M5mQon8EVAgMB9QIg0vKNYOU2cUWT5IwCEMcFrruVWA1w4A95GtqmivEAw5t%2BvizDnl7hn%2BdyyB423jhK%2F7VuEXU%2FhrnpOV3irTamF3M6juOE98yLJNJOoNfkr1L40vDbfKQCwp%2FM651V3FPLMf64HjbeOEr%2FtWq6JsmOv4NqIZsTejXzpnzN7jyc7ZuD7OlW1UPi1AOEYlF%2BQfd%2B23jJqLFZfozH64&amp;u=https%3A%2F%2Falimarket.tmall.com%2Fmarkets%2Falimama%2Fmingdian&amp;k=513">
+                               >
                                 <div class="tanx-banner-con">
                                     <img class="tanx-banner"
                                          src="https://aecpm.alicdn.com/simba/img/TB1_JXrLVXXXXbZXVXXSutbFXXX.jpg">
@@ -431,7 +431,7 @@
                                     <div class="main-banner-con2" style="background-color:#ffffff;">
                                         <a tabindex="-1" class=" j_needExposure   j_needGoldExposure " data-exposure=""
                                            data-gold-exposure="" data-spm="d5"
-                                           href="https://pages.tmall.com/wow/a/act/tmall/dailygroup/127/wupr?trackInfo=20160815100101;821906741840;322840;582439433884;3;null;1007.14152.156103.100200300000000;6a79a15e-a18e-407d-8f7b-9d5e853defd5;1;0;10000002;17019525;1;null_null_0.5_null_false_e:1007.14152.156103.100200300000000;6a79a15e-a18e-407d-8f7b-9d5e853defd5;0&amp;item_id=582439433884&amp;pvid=6a79a15e-a18e-407d-8f7b-9d5e853defd5&amp;pos=2&amp;activity_id=322840&amp;wh_pid=daily-189332&amp;acm=07055.1003.1.2519102&amp;scm=1003.1.20160815.OTHER_0_7534698">
+                                           >
                                             <b class="j_bigBanner big-banner "
                                                data-src="//img.alicdn.com/imgextra/i1/110/O1CN01UVAjk31CgQ9o7bEcr_!!110-0-luban.jpg_q100.jpg_.webp"
                                                style="background: rgba(0, 0, 0, 0) url(&quot;//img.alicdn.com/imgextra/i1/110/O1CN01UVAjk31CgQ9o7bEcr_!!110-0-luban.jpg_q100.jpg_.webp&quot;) no-repeat scroll center center;"></b>
@@ -440,7 +440,7 @@
 
                                         <a tabindex="-1"
                                            class="j_smallBanner small-banner0  j_needExposure   j_needGoldExposure "
-                                           href="https://pages.tmall.com/wow/a/act/tmall/dailygroup/127/wupr?trackInfo=20160815100201;824821162040;323776;601187411082;3;null;1007.14152.156103.100200300000000;6a79a15e-a18e-407d-8f7b-9d5e853defd5;3;0;10000002;17133478;1;null_null_0.5_null_false_e:1007.14152.156103.100200300000000;6a79a15e-a18e-407d-8f7b-9d5e853defd5;0&amp;item_id=601187411082&amp;pvid=6a79a15e-a18e-407d-8f7b-9d5e853defd5&amp;pos=10&amp;activity_id=323776&amp;wh_pid=daily-182666&amp;acm=07055.1003.1.2519102&amp;scm=1003.1.20160815.OTHER_0_7560597"
+
                                            data-exposure="" data-gold-exposure="">
                                             <img alt=""
                                                  src="//img.alicdn.com/imgextra/i3/79/O1CN01jIC0nG1CSDsgWKZLb_!!79-2-luban.png_240x5000q100.jpg_.webp"
@@ -450,7 +450,7 @@
 
                                         <a tabindex="-1"
                                            class="j_smallBanner small-banner1  j_needExposure   j_needGoldExposure "
-                                           href="https://pages.tmall.com/wow/a/act/tmall/dailygroup/127/wupr?trackInfo=20160815100201;82400624054;323424;595731647454;3;null;1007.14152.156103.100200300000000;6a79a15e-a18e-407d-8f7b-9d5e853defd5;4;0;10000002;11921785;66049;null_null_0.5_null_false_e:1007.14152.156103.100200300000000;6a79a15e-a18e-407d-8f7b-9d5e853defd5;0&amp;item_id=595731647454&amp;pvid=6a79a15e-a18e-407d-8f7b-9d5e853defd5&amp;pos=11&amp;activity_id=323424&amp;wh_pid=daily-189729&amp;acm=07055.1003.1.2519102&amp;scm=1003.1.20160815.OTHER_0_7551521"
+
                                            data-exposure="" data-gold-exposure="">
                                             <img alt=""
                                                  src="//img.alicdn.com/imgextra/i3/1153830/O1CN01TWkreS1eABWU5kshV_!!1153830-2-lubanu.png_240x5000q100.jpg_.webp"
@@ -474,7 +474,7 @@
                                     <div class="main-banner-con2" style="background-color:#4997ee;">
                                         <a tabindex="-1" class=" j_needExposure   j_needGoldExposure " data-exposure=""
                                            data-gold-exposure="" data-spm="d6"
-                                           href="https://pages.tmall.com/wow/a/act/tmall/tmc/25715/wupr?trackInfo=20160815100101;823133896440;323099;528097702375;3;null;1007.14152.156103.100200300000000;6a79a15e-a18e-407d-8f7b-9d5e853defd5;2;0;10000002;17045831;1;null_null_0.5_null_false_e:1007.14152.156103.100200300000000;6a79a15e-a18e-407d-8f7b-9d5e853defd5;0&amp;item_id=528097702375&amp;pvid=6a79a15e-a18e-407d-8f7b-9d5e853defd5&amp;pos=3&amp;activity_id=323099&amp;wh_pid=industry-187957&amp;acm=07055.1003.1.2519102&amp;scm=1003.1.20160815.OTHER_0_7541096">
+                                           >
                                             <b class="j_bigBanner big-banner "
                                                data-src="//img.alicdn.com/imgextra/i1/92/O1CN012Ok4x51CYB1sYwe50_!!92-0-luban.jpg_q100.jpg_.webp"
                                                style="background: rgba(0, 0, 0, 0) url(&quot;//img.alicdn.com/imgextra/i1/92/O1CN012Ok4x51CYB1sYwe50_!!92-0-luban.jpg_q100.jpg_.webp&quot;) no-repeat scroll center center;"></b>
@@ -483,7 +483,7 @@
 
                                         <a tabindex="-1"
                                            class="j_smallBanner small-banner0  j_needExposure   j_needGoldExposure "
-                                           href="https://pages.tmall.com/wow/a/act/tmall/dailygroup/127/wupr?trackInfo=20160815100201;815934336340;321882;566839659862;3;null;1007.14152.156103.100200300000000;6a79a15e-a18e-407d-8f7b-9d5e853defd5;5;0;10000002;16885555;1;null_null_0.5_null_false_e:1007.14152.156103.100200300000000;6a79a15e-a18e-407d-8f7b-9d5e853defd5;0&amp;item_id=566839659862&amp;pvid=6a79a15e-a18e-407d-8f7b-9d5e853defd5&amp;pos=12&amp;activity_id=321882&amp;wh_pid=daily-189417&amp;acm=07055.1003.1.2519102&amp;scm=1003.1.20160815.OTHER_0_7535789"
+
                                            data-exposure="" data-gold-exposure="">
                                             <img alt=""
                                                  src="//img.alicdn.com/imgextra/i4/147/O1CN015L12vZ1CxMoI5aBjN_!!147-2-luban.png_240x5000q100.jpg_.webp"
@@ -592,10 +592,10 @@
         <div id="tmall-ensure">
 
             <div class="mui-global-fragment-load" data-fragment="tmbase/global_footer_ensure"><a
-                    href="//pages.tmall.com/wow/seller/act/newpinzhibaozhang"></a>
-                <a href="//www.tmall.com/wow/seller/act/seven-day"></a>
-                <a href="//www.tmall.com/wow/seller/act/special-service"></a>
-                <a href="//service.tmall.com/support/tmall/tmallHelp.htm"></a></div>
+                   ></a>
+                <a ></a>
+                <a ></a>
+                <a ></a></div>
 
         </div>
     </div>
